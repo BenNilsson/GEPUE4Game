@@ -25,8 +25,6 @@ public:
 
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 	virtual void NativeBeginPlay() override;
-
-	void JumpStartTriggered();
 private:
 	
 

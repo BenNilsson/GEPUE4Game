@@ -5,11 +5,29 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="" />
+    <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowAim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowAimIdle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowAimRecoil.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_Skeleton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/PlayerAnimBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/PlayerAnimBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/PlayerControllerCPPBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/PlayerControllerCPPBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/WoodenArrowMat.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/WoodenArrowMat.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/Engine/Private/Components/PawnMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -29,21 +47,22 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Inventory/InventoryComponent.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Inventory/InventoryComponent.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Interfaces/Equipable.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/ArrowProjectile.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Fireable.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/ArrowProjectile.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Interfaces/Fireable.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oNuGU81sS98QbcJpScBJQqSrnE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -300,6 +319,7 @@
       <workItem from="1614049999873" duration="1000000" />
       <workItem from="1614077135029" duration="4094000" />
       <workItem from="1614103899152" duration="18754000" />
+      <workItem from="1614199183717" duration="8036000" />
     </task>
     <servers />
   </component>
@@ -308,6 +328,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

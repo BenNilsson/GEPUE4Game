@@ -44,6 +44,10 @@ public:
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
 	class UAnimInstancePlayer* AnimInstancePlayer;
 
+	/* Weapon Fire Montage */
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* WeaponAnimMontage;
+	
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
 	float SprintModifier;
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
@@ -54,8 +58,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Controller Settings")
 	float BaseMovementSpeed;
-	UPROPERTY(VisibleAnywhere, Category="Controller Settings")
-	bool JumpStart;
 
 	void DoJump();
 	

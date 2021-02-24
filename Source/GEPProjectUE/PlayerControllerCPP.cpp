@@ -39,7 +39,7 @@ APlayerControllerCPP::APlayerControllerCPP()
 	// Weapon Socket
 	WeaponSocketSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Weapon Socket Scene Component"));
 	WeaponSocketSceneComponent->SetupAttachment(ACharacter::GetMesh(), "WeaponSocket_R");
-
+	
 	// Weapon
 	Weapon = CreateDefaultSubobject<UChildActorComponent>(TEXT("WeaponSlot"));
 	Weapon->SetupAttachment(WeaponSocketSceneComponent);
@@ -124,7 +124,6 @@ void APlayerControllerCPP::MoveRight(float Value)
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator Yaw(0, Rotation.Yaw, 0);
 
-		// Get forward vector
 		const FVector Direction = FRotationMatrix(Yaw).GetUnitAxis(EAxis::Y);
 		AddMovementInput(Direction, Value);
 	}
@@ -144,23 +143,29 @@ void APlayerControllerCPP::LookUpAtRate(float Rate)
 void APlayerControllerCPP::WeaponFireTriggered()
 {
 	if (Weapon == nullptr) return;
-
-	AActor* weaponChildActor = Weapon->GetChildActor();
-	IFireable* weaponCast = Cast<IFireable>(weaponChildActor);
 	
-	if (weaponCast)
-		weaponCast->Execute_Fire(weaponChildActor);
+	AActor* WeaponChildActor = Weapon->GetChildActor();
+	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
+
+	if (WeaponAnimMontage)
+		PlayAnimMontage(WeaponAnimMontage);
+	
+	if (WeaponCast)
+		WeaponCast->Execute_Fire(WeaponChildActor);
 }
 
 void APlayerControllerCPP::WeaponFireReleased()
 {
 	if (Weapon == nullptr) return;
 
-	AActor* weaponChildActor = Weapon->GetChildActor();
-	IFireable* weaponCast = Cast<IFireable>(weaponChildActor);
+	if (WeaponAnimMontage)
+		StopAnimMontage(WeaponAnimMontage);
 	
-	if (weaponCast)
-		weaponCast->Execute_FireReleased(weaponChildActor);
+	AActor* WeaponChildActor = Weapon->GetChildActor();
+	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
+	
+	if (WeaponCast)
+		WeaponCast->Execute_FireReleased(WeaponChildActor);
 }
 
 void APlayerControllerCPP::WeaponFireHeld()

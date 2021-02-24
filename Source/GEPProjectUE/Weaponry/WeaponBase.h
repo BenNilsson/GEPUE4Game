@@ -29,6 +29,10 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly)
 	class USkeletalMeshComponent* WeaponMesh;
 
+	/* Anim Montage */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Controller Settings")
+	class UAnimMontage* WeaponAnimMontage;
+
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	bool Fire();
