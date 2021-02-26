@@ -142,27 +142,35 @@ void APlayerControllerCPP::LookUpAtRate(float Rate)
 
 void APlayerControllerCPP::WeaponFireTriggered()
 {
-	if (Weapon == nullptr) return;
+	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
 	
 	AActor* WeaponChildActor = Weapon->GetChildActor();
 	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
-
-	if (WeaponAnimMontage)
-		PlayAnimMontage(WeaponAnimMontage);
 	
 	if (WeaponCast)
 		WeaponCast->Execute_Fire(WeaponChildActor);
+	
+	if (WeaponAnimMontage)
+		PlayAnimMontage(WeaponAnimMontage);
+	
 }
 
 void APlayerControllerCPP::WeaponFireReleased()
 {
-	if (Weapon == nullptr) return;
+	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
 
-	if (WeaponAnimMontage)
-		StopAnimMontage(WeaponAnimMontage);
-	
 	AActor* WeaponChildActor = Weapon->GetChildActor();
 	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
+
+	switch (EPlayerCombatState)
+	{
+	    case Ranged:
+	    	if (WeaponAnimMontage)
+	    		StopAnimMontage(WeaponAnimMontage);
+			break;
+		default:
+			break;
+	}
 	
 	if (WeaponCast)
 		WeaponCast->Execute_FireReleased(WeaponChildActor);
@@ -170,7 +178,7 @@ void APlayerControllerCPP::WeaponFireReleased()
 
 void APlayerControllerCPP::WeaponFireHeld()
 {
-	if (Weapon == nullptr) return;
+	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
 
 	AActor* weaponChildActor = Weapon->GetChildActor();
 	IFireable* weaponCast = Cast<IFireable>(weaponChildActor);

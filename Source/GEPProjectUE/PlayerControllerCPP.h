@@ -9,6 +9,15 @@
 
 class UItem;
 
+UENUM()
+enum EPlayer_Combat_State
+{
+	Passive 	UMETA(DisplayName = "Passive"),
+	Melee		UMETA(DisplayName = "Melee"),
+	Ranged		UMETA(DisplayName = "Ranged"),
+};
+
+
 UCLASS()
 class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
 {
@@ -33,6 +42,9 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
 	/* WEAPON */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UChildActorComponent* Weapon;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	TEnumAsByte<EPlayer_Combat_State> EPlayerCombatState;
 	
 public:
 	// Sets default values for this character's properties
@@ -88,6 +100,5 @@ protected:
 	float LookRate;
 	UPROPERTY(VisibleAnywhere, Category="Controller Settings")
 	bool IsCrouching;
-	
 
 };
