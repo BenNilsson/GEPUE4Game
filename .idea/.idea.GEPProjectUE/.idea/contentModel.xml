@@ -43503,6 +43503,8 @@
       <e p="UE4Game.Target.cs" t="Include" />
     </e>
     <e p="D:\Unreal Projects\GEPProjectUE" t="IncludeFlat">
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
@@ -43530,6 +43532,8 @@
           <e p="GEPProjectUE.h" t="Include" />
           <e p="GEPProjectUEGameModeBase.cpp" t="Include" />
           <e p="GEPProjectUEGameModeBase.h" t="Include" />
+          <e p="GEPProjectUEHUD.cpp" t="Include" />
+          <e p="GEPProjectUEHUD.h" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="Equipable.cpp" t="Include" />
             <e p="Equipable.h" t="Include" />

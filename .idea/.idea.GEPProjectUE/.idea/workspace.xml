@@ -6,11 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/PlayerController/PlayerControllerCPPBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/PlayerControllerCPPBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_ArrowProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_ArrowProjectile.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +50,12 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Anim/UAnimInstancePlayer.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBase.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/PlayerControllerCPP.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUEHUD.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUEHUD.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Weaponry/WeaponBow.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oNuGU81sS98QbcJpScBJQqSrnE" />
@@ -59,6 +65,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34669557" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -313,7 +320,7 @@
       <workItem from="1614199183717" duration="8036000" />
       <workItem from="1614255196422" duration="1851000" />
       <workItem from="1614268916957" duration="1864000" />
-      <workItem from="1614334135938" duration="2213000" />
+      <workItem from="1614334135938" duration="9549000" />
     </task>
     <servers />
   </component>

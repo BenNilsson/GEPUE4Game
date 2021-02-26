@@ -4,6 +4,8 @@
 #include "WeaponBow.h"
 
 #include "Components/ArrowComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 
 // Sets default values
@@ -27,16 +29,25 @@ bool AWeaponBow::FireReleased_Implementation()
 	if (!World && ArrowProjectile == nullptr) return false;
 
 	FVector const SpawnLoc = ArrowComponent->GetComponentLocation();
-	FRotator const SpawnRot = ArrowComponent->GetComponentRotation();
+	
+	FHitResult Hit(ForceInit);
+	FVector Start = UGameplayStatics::GetPlayerController(World, 0)->PlayerCameraManager->GetCameraLocation();
+	FVector Forward = UGameplayStatics::GetPlayerController(World, 0)->PlayerCameraManager->GetActorForwardVector();
+	FVector End = Start + (Forward * 100000.0f);
 	
 	FActorSpawnParameters ActorSpawnParameters;
 	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 	AActor* ParentActor = GetParentActor();
 	ActorSpawnParameters.Owner = ParentActor;
 
-	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLoc, SpawnRot, ActorSpawnParameters);
-	GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString::Printf(TEXT("Bow Fired!")));
+	FVector ArrowDirection = Start + (Forward * 2000);
+	FRotator SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLoc, ArrowDirection);
 	
+	// Line trace from camera outwards
+	if (World->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility))
+		SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLoc, Hit.ImpactPoint);
+	
+	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLoc, SpawnRotation, ActorSpawnParameters);
 	return true;
 }
 

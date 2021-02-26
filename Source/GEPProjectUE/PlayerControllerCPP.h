@@ -43,6 +43,7 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UChildActorComponent* Weapon;
 
+	/* COMBAT STATE */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	TEnumAsByte<EPlayer_Combat_State> EPlayerCombatState;
 	
