@@ -8,6 +8,16 @@
 
 #include "WeaponBase.generated.h"
 
+UENUM(BlueprintType)
+enum EWeapon_Combat_Type
+{
+	None = 0 		UMETA(DisplayName = "None"),
+    Melee = 1		UMETA(DisplayName = "Melee"),
+    Ranged = 2	UMETA(DisplayName = "Ranged"),
+};
+
+
+
 UCLASS()
 class GEPPROJECTUE_API AWeaponBase : public AActor, public IFireable
 {
@@ -33,6 +43,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Controller Settings")
 	class UAnimMontage* WeaponAnimMontage;
 
+	/* COMBAT STATE */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	TEnumAsByte<EWeapon_Combat_Type> EWeaponType;
+	
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	bool Fire();

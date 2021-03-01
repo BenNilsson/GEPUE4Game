@@ -140,6 +140,19 @@ void APlayerControllerCPP::LookUpAtRate(float Rate)
 	AddControllerPitchInput(Rate * GetWorld()->GetDeltaSeconds() * LookRate);
 }
 
+void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
+{
+	EPlayerCombatState = State;
+
+	switch (State)
+	{
+		case EPlayer_Combat_State::Ranged:
+			break;
+		default:
+			break;
+	}
+}
+
 void APlayerControllerCPP::WeaponFireTriggered()
 {
 	if (Weapon == nullptr || EPlayerCombatState == Passive) return;

@@ -13,6 +13,8 @@ AWeaponBow::AWeaponBow()
 {
 	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow Spawn Location"));
 	ArrowComponent->SetupAttachment(RootSceneComponent);
+
+	EWeaponType = Ranged;
 }
 
 // Fire first pressed

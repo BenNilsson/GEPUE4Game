@@ -9,7 +9,7 @@
 
 class UItem;
 
-UENUM()
+UENUM(BlueprintType)
 enum EPlayer_Combat_State
 {
 	Passive 	UMETA(DisplayName = "Passive"),
@@ -87,6 +87,8 @@ protected:
 	void TurnAtRate(float Rate);
 	void LookUpAtRate(float Rate);
 
+	void SetState(EPlayer_Combat_State State);
+	
 	void WeaponFireTriggered();
 	void WeaponFireReleased();
 	void WeaponFireHeld();

@@ -43550,6 +43550,8 @@
             <e p="StaticItem.cpp" t="Include" />
             <e p="StaticItem.h" t="Include" />
           </e>
+          <e p="MainMenuHUD.cpp" t="Include" />
+          <e p="MainMenuHUD.h" t="Include" />
           <e p="PlayerControllerCPP.cpp" t="Include" />
           <e p="PlayerControllerCPP.h" t="Include" />
           <e p="PlayerJumpNotify.cpp" t="Include" />
