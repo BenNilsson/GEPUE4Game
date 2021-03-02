@@ -4,9 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
 #include "Weaponable.generated.h"
-
-enum class EWeapon_Combat_Type;
 
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)

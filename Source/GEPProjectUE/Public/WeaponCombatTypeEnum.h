@@ -15,9 +15,9 @@ enum class EWeapon_Combat_Type
     Ranged = 2		UMETA(DisplayName = "Ranged"),
 };
 
-class GEPPROJECTUE_API EnumTest
+class GEPPROJECTUE_API WeaponCombatTypeEnum
 {
 public:
-	EnumTest();
-	~EnumTest();
+	WeaponCombatTypeEnum();
+	~WeaponCombatTypeEnum();
 };

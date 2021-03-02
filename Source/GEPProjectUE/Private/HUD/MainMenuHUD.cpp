@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MainMenuHUD.h"
+#include "GEPProjectUE/Public/HUD/MainMenuHUD.h"
 
 void AMainMenuHUD::DrawHUD()
 {

@@ -43523,56 +43523,68 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Source" t="Include">
         <e p="GEPProjectUE" t="Include">
-          <e p="Anim" t="Include">
-            <e p="UAnimInstancePlayer.cpp" t="Include" />
-            <e p="UAnimInstancePlayer.h" t="Include" />
-          </e>
           <e p="GEPProjectUE.Build.cs" t="Include" />
           <e p="GEPProjectUE.cpp" t="Include" />
           <e p="GEPProjectUE.h" t="Include" />
           <e p="GEPProjectUEGameModeBase.cpp" t="Include" />
           <e p="GEPProjectUEGameModeBase.h" t="Include" />
-          <e p="GEPProjectUEHUD.cpp" t="Include" />
-          <e p="GEPProjectUEHUD.h" t="Include" />
-          <e p="Inventory" t="Include">
-            <e p="FoodItem.cpp" t="Include" />
-            <e p="FoodItem.h" t="Include" />
-            <e p="InventoryComponent.cpp" t="Include" />
-            <e p="InventoryComponent.h" t="Include" />
-            <e p="Item.cpp" t="Include" />
-            <e p="Item.h" t="Include" />
-            <e p="StaticItem.cpp" t="Include" />
-            <e p="StaticItem.h" t="Include" />
-          </e>
-          <e p="MainMenuHUD.cpp" t="Include" />
-          <e p="MainMenuHUD.h" t="Include" />
-          <e p="PlayerControllerCPP.cpp" t="Include" />
-          <e p="PlayerControllerCPP.h" t="Include" />
-          <e p="PlayerJumpNotify.cpp" t="Include" />
-          <e p="PlayerJumpNotify.h" t="Include" />
           <e p="Private" t="Include">
-            <e p="EnumTest.cpp" t="Include" />
+            <e p="Anim" t="Include">
+              <e p="UAnimInstancePlayer.cpp" t="Include" />
+            </e>
+            <e p="HUD" t="Include">
+              <e p="GEPProjectUEHUD.cpp" t="Include" />
+              <e p="MainMenuHUD.cpp" t="Include" />
+            </e>
             <e p="Interfaces" t="Include">
               <e p="Equipable.cpp" t="Include" />
               <e p="Fireable.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
+            <e p="Inventory" t="Include">
+              <e p="FoodItem.cpp" t="Include" />
+              <e p="InventoryComponent.cpp" t="Include" />
+              <e p="Item.cpp" t="Include" />
+              <e p="StaticItem.cpp" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="PlayerControllerCPP.cpp" t="Include" />
+            </e>
+            <e p="WeaponCombatTypeEnum.cpp" t="Include" />
+            <e p="Weaponry" t="Include">
+              <e p="ArrowProjectile.cpp" t="Include" />
+              <e p="WeaponBase.cpp" t="Include" />
+              <e p="WeaponBow.cpp" t="Include" />
+            </e>
           </e>
           <e p="Public" t="Include">
-            <e p="EnumTest.h" t="Include" />
+            <e p="Anim" t="Include">
+              <e p="UAnimInstancePlayer.h" t="Include" />
+            </e>
+            <e p="HUD" t="Include">
+              <e p="GEPProjectUEHUD.h" t="Include" />
+              <e p="MainMenuHUD.h" t="Include" />
+            </e>
             <e p="Interfaces" t="Include">
               <e p="Equipable.h" t="Include" />
               <e p="Fireable.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
-          </e>
-          <e p="Weaponry" t="Include">
-            <e p="ArrowProjectile.cpp" t="Include" />
-            <e p="ArrowProjectile.h" t="Include" />
-            <e p="WeaponBase.cpp" t="Include" />
-            <e p="WeaponBase.h" t="Include" />
-            <e p="WeaponBow.cpp" t="Include" />
-            <e p="WeaponBow.h" t="Include" />
+            <e p="Inventory" t="Include">
+              <e p="FoodItem.h" t="Include" />
+              <e p="InventoryComponent.h" t="Include" />
+              <e p="Item.h" t="Include" />
+              <e p="StaticItem.h" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="PlayerControllerCPP.h" t="Include" />
+            </e>
+            <e p="WeaponCombatTypeEnum.h" t="Include" />
+            <e p="Weaponry" t="Include">
+              <e p="ArrowProjectile.h" t="Include" />
+              <e p="WeaponBase.h" t="Include" />
+              <e p="WeaponBow.h" t="Include" />
+            </e>
           </e>
         </e>
         <e p="GEPProjectUE.Target.cs" t="Include" />

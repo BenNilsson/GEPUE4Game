@@ -1,17 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "PlayerControllerCPP.h"
+#include "GEPProjectUE/Public/Player/PlayerControllerCPP.h"
 
-#include "Anim/UAnimInstancePlayer.h"
+#include "GEPProjectUE/Public/Anim/UAnimInstancePlayer.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Inventory/Item.h"
-#include "Inventory/InventoryComponent.h"
-#include "Public/EnumTest.h"
-#include "Public/Interfaces/Fireable.h"
-#include "Public/Interfaces/Weaponable.h"
+#include "GEPProjectUE/Public/Inventory/Item.h"
+#include "GEPProjectUE/Public/Inventory/InventoryComponent.h"
+#include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
+#include "GEPProjectUE/Public/Interfaces/Fireable.h"
+#include "GEPProjectUE/Public/Interfaces/Weaponable.h"
 
 // Sets default values
 APlayerControllerCPP::APlayerControllerCPP()

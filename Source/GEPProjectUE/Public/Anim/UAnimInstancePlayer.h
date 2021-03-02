@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 
-#include "GEPProjectUE/PlayerControllerCPP.h"
+#include "GEPProjectUE/Public/Player/PlayerControllerCPP.h"
 #include "Runtime/Engine/Classes/Animation/AnimInstance.h"
 #include "UAnimInstancePlayer.generated.h"
 

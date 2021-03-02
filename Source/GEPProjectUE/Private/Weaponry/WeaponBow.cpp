@@ -1,10 +1,10 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "WeaponBow.h"
+#include "GEPProjectUE/Public/Weaponry/WeaponBow.h"
 
 #include "Components/ArrowComponent.h"
-#include "GEPProjectUE/Public/EnumTest.h"
+#include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 

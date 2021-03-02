@@ -1,8 +1,8 @@
-﻿#include "UAnimInstancePlayer.h"
-
+﻿
+#include "GEPProjectUE/Public/Anim/UAnimInstancePlayer.h"
 
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GEPProjectUE/PlayerControllerCPP.h"
+#include "GEPProjectUE/Public/Player/PlayerControllerCPP.h"
 
 UAnimInstancePlayer::UAnimInstancePlayer()
 {
