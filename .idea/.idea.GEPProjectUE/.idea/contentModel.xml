@@ -43532,6 +43532,9 @@
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.cpp" t="Include" />
             </e>
+            <e p="Components" t="Include">
+              <e p="HealthComponent.cpp" t="Include" />
+            </e>
             <e p="HUD" t="Include">
               <e p="GEPProjectUEHUD.cpp" t="Include" />
               <e p="MainMenuHUD.cpp" t="Include" />
@@ -43560,6 +43563,9 @@
           <e p="Public" t="Include">
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.h" t="Include" />
+            </e>
+            <e p="Components" t="Include">
+              <e p="HealthComponent.h" t="Include" />
             </e>
             <e p="HUD" t="Include">
               <e p="GEPProjectUEHUD.h" t="Include" />

@@ -31,6 +31,10 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;
 
+	/* HEALTH */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class UHealthComponent* Health;
+	
 	/* INVENTORY */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UInventoryComponent* Inventory;

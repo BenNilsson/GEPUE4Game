@@ -9,6 +9,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GEPProjectUE/Public/Inventory/Item.h"
 #include "GEPProjectUE/Public/Inventory/InventoryComponent.h"
+#include "GEPProjectUE/Public/Components/HealthComponent.h"
 #include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
 #include "GEPProjectUE/Public/Interfaces/Fireable.h"
 #include "GEPProjectUE/Public/Interfaces/Weaponable.h"
@@ -35,8 +36,11 @@ APlayerControllerCPP::APlayerControllerCPP()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0, 540, 0);
 
+	// Health Component
+	Health = CreateDefaultSubobject<UHealthComponent>("Player Health");
+	
 	// Player Inventory
-	Inventory = CreateDefaultSubobject<UInventoryComponent>("PlayerInventory");
+	Inventory = CreateDefaultSubobject<UInventoryComponent>("Player Inventory");
 
 	// Weapon Socket
 	WeaponSocketSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Weapon Socket Scene Component"));
