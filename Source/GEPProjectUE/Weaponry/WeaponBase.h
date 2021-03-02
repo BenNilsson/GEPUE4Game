@@ -4,22 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GEPProjectUE/Interfaces/Fireable.h"
+#include "GEPProjectUE/Public/Interfaces/Fireable.h"
+#include "GEPProjectUE/Public/Interfaces/Weaponable.h"
+
 
 #include "WeaponBase.generated.h"
 
-UENUM(BlueprintType)
-enum EWeapon_Combat_Type
-{
-	None = 0 		UMETA(DisplayName = "None"),
-    Melee = 1		UMETA(DisplayName = "Melee"),
-    Ranged = 2	UMETA(DisplayName = "Ranged"),
-};
 
-
+enum class EWeapon_Combat_Type;
 
 UCLASS()
-class GEPPROJECTUE_API AWeaponBase : public AActor, public IFireable
+class GEPPROJECTUE_API AWeaponBase : public AActor, public IFireable, public IWeaponable
 {
 	GENERATED_BODY()
 
@@ -55,8 +50,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	bool FireReleased();
 	virtual bool FireReleased_Implementation() override;
-	
+
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	bool FireHeld();
-	virtual bool FireHeld_Implementation() override;
+	EWeapon_Combat_Type GetWeaponType();
+	virtual EWeapon_Combat_Type GetWeaponType_Implementation() override;
 };

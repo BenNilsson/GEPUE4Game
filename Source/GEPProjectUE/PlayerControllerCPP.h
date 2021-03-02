@@ -91,7 +91,6 @@ protected:
 	
 	void WeaponFireTriggered();
 	void WeaponFireReleased();
-	void WeaponFireHeld();
 
 	void Sprint();
 

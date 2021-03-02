@@ -4,6 +4,7 @@
 #include "WeaponBow.h"
 
 #include "Components/ArrowComponent.h"
+#include "GEPProjectUE/Public/EnumTest.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -14,7 +15,7 @@ AWeaponBow::AWeaponBow()
 	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow Spawn Location"));
 	ArrowComponent->SetupAttachment(RootSceneComponent);
 
-	EWeaponType = Ranged;
+	EWeaponType = EWeapon_Combat_Type::Ranged;
 }
 
 // Fire first pressed
@@ -50,12 +51,6 @@ bool AWeaponBow::FireReleased_Implementation()
 		SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLoc, Hit.ImpactPoint);
 	
 	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLoc, SpawnRotation, ActorSpawnParameters);
-	return true;
-}
-
-// Fire held down
-bool AWeaponBow::FireHeld_Implementation()
-{
 	return true;
 }
 

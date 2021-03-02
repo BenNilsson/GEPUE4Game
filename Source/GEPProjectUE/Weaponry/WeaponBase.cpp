@@ -31,8 +31,8 @@ bool AWeaponBase::FireReleased_Implementation()
 	return true;
 }
 
-bool AWeaponBase::FireHeld_Implementation()
+EWeapon_Combat_Type AWeaponBase::GetWeaponType_Implementation()
 {
-	return true;
+	return EWeaponType;
 }
 

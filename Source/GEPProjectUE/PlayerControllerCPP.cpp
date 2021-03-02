@@ -7,9 +7,11 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Interfaces/Fireable.h"
 #include "Inventory/Item.h"
 #include "Inventory/InventoryComponent.h"
+#include "Public/EnumTest.h"
+#include "Public/Interfaces/Fireable.h"
+#include "Public/Interfaces/Weaponable.h"
 
 // Sets default values
 APlayerControllerCPP::APlayerControllerCPP()
@@ -97,7 +99,6 @@ void APlayerControllerCPP::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	// Weapon Fire Actions
 	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerControllerCPP::WeaponFireTriggered);
 	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Released, this, &APlayerControllerCPP::WeaponFireReleased);
-	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Repeat, this, &APlayerControllerCPP::WeaponFireHeld);
 	
 	
 	TurnRate = 80;
@@ -146,7 +147,15 @@ void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
 
 	switch (State)
 	{
+		case EPlayer_Combat_State::Melee:
+			bUseControllerRotationYaw = false;
+			break;
 		case EPlayer_Combat_State::Ranged:
+			// Don't rotate camera mesh, only the camera
+			bUseControllerRotationYaw = true;
+			break;
+		case EPlayer_Combat_State::Passive:
+			bUseControllerRotationYaw = false;
 			break;
 		default:
 			break;
@@ -155,14 +164,34 @@ void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
 
 void APlayerControllerCPP::WeaponFireTriggered()
 {
-	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
+	if (Weapon == nullptr) return;
 	
 	AActor* WeaponChildActor = Weapon->GetChildActor();
-	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
+
+	// Change state depending on weapon type
+	if (WeaponChildActor->GetClass()->ImplementsInterface(UWeaponable::StaticClass()))
+	{
+		EWeapon_Combat_Type WeaponType = IWeaponable::Execute_GetWeaponType(WeaponChildActor);
+		switch (WeaponType)
+		{
+			case EWeapon_Combat_Type::Melee:
+				SetState(EPlayer_Combat_State::Melee);
+				break;
+			case EWeapon_Combat_Type::Ranged:
+				SetState(EPlayer_Combat_State::Ranged);
+				break;
+			case EWeapon_Combat_Type::None:
+				SetState(EPlayer_Combat_State::Passive);
+				break;
+			default:
+				break;
+		}
+		
+	}
 	
-	if (WeaponCast)
-		WeaponCast->Execute_Fire(WeaponChildActor);
-	
+	if (WeaponChildActor->GetClass()->ImplementsInterface(UFireable::StaticClass()))
+		IFireable::Execute_Fire(WeaponChildActor);
+
 	if (WeaponAnimMontage)
 		PlayAnimMontage(WeaponAnimMontage);
 	
@@ -173,31 +202,21 @@ void APlayerControllerCPP::WeaponFireReleased()
 	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
 
 	AActor* WeaponChildActor = Weapon->GetChildActor();
-	IFireable* WeaponCast = Cast<IFireable>(WeaponChildActor);
 
 	switch (EPlayerCombatState)
 	{
-	    case Ranged:
+	    case EPlayer_Combat_State::Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
 			break;
 		default:
 			break;
 	}
-	
-	if (WeaponCast)
-		WeaponCast->Execute_FireReleased(WeaponChildActor);
-}
 
-void APlayerControllerCPP::WeaponFireHeld()
-{
-	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
+	SetState(Passive);
 
-	AActor* weaponChildActor = Weapon->GetChildActor();
-	IFireable* weaponCast = Cast<IFireable>(weaponChildActor);
-	
-	if (weaponCast)
-		weaponCast->Execute_FireHeld(weaponChildActor);
+	if (WeaponChildActor->GetClass()->ImplementsInterface(UFireable::StaticClass()))
+		IFireable::Execute_FireReleased(WeaponChildActor);
 }
 
 void APlayerControllerCPP::Sprint()

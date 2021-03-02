@@ -26,7 +26,6 @@ public:
 
 	virtual bool Fire_Implementation() override;
 	virtual bool FireReleased_Implementation() override;
-	virtual bool FireHeld_Implementation() override;
 
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}
 
