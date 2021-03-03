@@ -2,6 +2,8 @@
 
 #include "GEPProjectUE/Public/Components/HealthComponent.h"
 
+#include <string>
+
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
 {
@@ -30,5 +32,7 @@ void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const UDam
 
 	Health -= Damage; // Decrease health
 	Health = FMath::Clamp(Health, .0f, HealthStart); // Clamp to avoid going below 0
+
+	GEngine->AddOnScreenDebugMessage(-10, 1.f, FColor::Red, FString::Printf(TEXT("Health: %f"), Health));
 }
 

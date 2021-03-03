@@ -14,8 +14,7 @@ class GEPPROJECTUE_API AWeaponBow : public AWeaponBase
 {
 	GENERATED_BODY()
 
-	UPROPERTY(VisibleDefaultsOnly)
-	TSubclassOf<AArrowProjectile> ArrowProjectile;
+	
 
 	UPROPERTY(VisibleDefaultsOnly)
 	class UArrowComponent* ArrowComponent;
@@ -24,6 +23,9 @@ public:
 	// Sets default values for this actor's properties
 	AWeaponBow();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AArrowProjectile> ArrowProjectile;
+	
 	virtual bool Fire_Implementation() override;
 	virtual bool FireReleased_Implementation() override;
 

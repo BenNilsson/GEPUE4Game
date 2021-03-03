@@ -43529,6 +43529,10 @@
           <e p="GEPProjectUEGameModeBase.cpp" t="Include" />
           <e p="GEPProjectUEGameModeBase.h" t="Include" />
           <e p="Private" t="Include">
+            <e p="AI" t="Include">
+              <e p="AIBase.cpp" t="Include" />
+              <e p="DeerAI.cpp" t="Include" />
+            </e>
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.cpp" t="Include" />
             </e>
@@ -43561,6 +43565,10 @@
             </e>
           </e>
           <e p="Public" t="Include">
+            <e p="AI" t="Include">
+              <e p="AIBase.h" t="Include" />
+              <e p="DeerAI.h" t="Include" />
+            </e>
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.h" t="Include" />
             </e>
