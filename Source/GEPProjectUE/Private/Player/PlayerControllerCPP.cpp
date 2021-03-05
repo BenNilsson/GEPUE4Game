@@ -18,7 +18,7 @@
 APlayerControllerCPP::APlayerControllerCPP()
 {
 	// Create Camera Boom arm
-	CameraBoomArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Camera Boom Arm")); // Create a USpringArmComponent
+	CameraBoomArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoomArm")); // Create a USpringArmComponent
 	CameraBoomArm->SetupAttachment(RootComponent); // Attach it as the Root component
 	CameraBoomArm->TargetArmLength = 600; // Set length (how far back the camera is)
 	CameraBoomArm->bUsePawnControlRotation = true;
@@ -37,13 +37,14 @@ APlayerControllerCPP::APlayerControllerCPP()
 	GetCharacterMovement()->RotationRate = FRotator(0, 540, 0);
 
 	// Health Component
-	Health = CreateDefaultSubobject<UHealthComponent>("Player Health");
+	Health = CreateDefaultSubobject<UHealthComponent>("PlayerHealth");
 	
 	// Player Inventory
-	Inventory = CreateDefaultSubobject<UInventoryComponent>("Player Inventory");
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>("PlayerInventory");
+	InventoryComponent->MaxSize = 32;
 
 	// Weapon Socket
-	WeaponSocketSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Weapon Socket Scene Component"));
+	WeaponSocketSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("WeaponSocketSceneComponent"));
 	WeaponSocketSceneComponent->SetupAttachment(ACharacter::GetMesh(), "WeaponSocket_R");
 	
 	// Weapon

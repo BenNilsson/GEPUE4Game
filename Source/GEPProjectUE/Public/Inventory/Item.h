@@ -11,7 +11,7 @@
 class UStaticMesh;
 class UTexture2D;
 
-UCLASS(Abstract, Blueprintable, BlueprintType, EditInlineNew, DefaultToInstanced)
+UCLASS(Abstract, BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced)
 class GEPPROJECTUE_API UItem : public UObject
 {
 	GENERATED_BODY()

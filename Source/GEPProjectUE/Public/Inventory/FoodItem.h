@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(EditInlineNew)
 class GEPPROJECTUE_API UFoodItem : public UItem
 {
 	GENERATED_BODY()

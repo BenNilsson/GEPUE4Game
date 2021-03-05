@@ -9,9 +9,7 @@
 // DELEGATE, Used to update UI
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnInventoryUpdated);
 
-class UItem;
-
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class GEPPROJECTUE_API UInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -20,8 +18,10 @@ public:
 	// Sets default values for this component's properties
 	UInventoryComponent();
 
-	bool AddItem(UItem* Item);
-	bool RemoveItem(UItem* Item);
+	UFUNCTION(BlueprintCallable)
+	bool AddItem(class UItem* Item);
+	UFUNCTION(BlueprintCallable)
+	bool RemoveItem(class UItem* Item);
 
 	UPROPERTY(EditDefaultsOnly, Category="Inventory")
 	int MaxSize;
@@ -29,8 +29,11 @@ public:
 	UPROPERTY(BlueprintAssignable, Category="Inventory")
 	FOnInventoryUpdated OnInventoryUpdated;
 
+	UPROPERTY(EditAnywhere, Instanced)
+	TArray<class UItem*> DefaultItems;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Items")
-	TArray<UItem*> Items;
+	TArray<class UItem*> Items;
 
 protected:
 	// Called when the game starts

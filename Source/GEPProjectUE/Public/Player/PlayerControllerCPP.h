@@ -36,8 +36,8 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
 	class UHealthComponent* Health;
 	
 	/* INVENTORY */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	class UInventoryComponent* Inventory;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Inventory", meta = (AllowPrivateAccess = "true"))
+	class UInventoryComponent* InventoryComponent;
 
 	/* WEAPON SOCKET */
 	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
@@ -56,6 +56,7 @@ public:
 	APlayerControllerCPP();
 
 	/* Use Item */
+	UFUNCTION(BlueprintCallable)
 	void UseItem(UItem* Item);
 	
 	UPROPERTY(EditAnywhere, Category="Controller Settings")

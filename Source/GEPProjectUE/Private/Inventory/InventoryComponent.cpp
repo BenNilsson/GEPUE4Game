@@ -7,7 +7,7 @@
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent()
 {
-	MaxSize = 30;
+	MaxSize = 20;
 }
 
 // Called when the game starts
@@ -16,7 +16,7 @@ void UInventoryComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	for (auto& Item : Items)
+	for (auto& Item : DefaultItems)
 	{
 		AddItem((Item));
 	}

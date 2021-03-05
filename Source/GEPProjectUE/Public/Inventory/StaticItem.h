@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(EditInlineNew)
 class GEPPROJECTUE_API UStaticItem : public UItem
 {
 	GENERATED_BODY()
