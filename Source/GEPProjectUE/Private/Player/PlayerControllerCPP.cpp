@@ -70,6 +70,16 @@ void APlayerControllerCPP::DoJump()
 	ACharacter::Jump();
 }
 
+APlayerControllerCPP* APlayerControllerCPP::GetPlayerController_Implementation()
+{
+	return this;
+}
+
+UInventoryComponent* APlayerControllerCPP::GetInventory_Implementation()
+{
+	return InventoryComponent;
+}
+
 // Called when the game starts or when spawned
 void APlayerControllerCPP::BeginPlay()
 {

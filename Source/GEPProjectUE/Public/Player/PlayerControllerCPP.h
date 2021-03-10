@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 
 #include "GameFramework/Character.h"
+#include "Interfaces/GetInventory.h"
+#include "Interfaces/GetPlayerController.h"
+
 #include "PlayerControllerCPP.generated.h"
 
 class UItem;
@@ -19,7 +22,7 @@ enum EPlayer_Combat_State
 
 
 UCLASS()
-class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter
+class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter, public IGetPlayerController, public IGetInventory
 {
 	GENERATED_BODY()
 
@@ -65,7 +68,8 @@ public:
 	/* Weapon Fire Montage */
 	UPROPERTY(EditAnywhere)
 	class UAnimMontage* WeaponAnimMontage;
-	
+
+	/* Movement Functions */
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
 	float SprintModifier;
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
@@ -78,6 +82,16 @@ public:
 	float BaseMovementSpeed;
 
 	void DoJump();
+
+	/* INTERFACES */
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	APlayerControllerCPP* GetPlayerController();
+	virtual APlayerControllerCPP* GetPlayerController_Implementation() override;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UInventoryComponent* GetInventory();
+	virtual UInventoryComponent* GetInventory_Implementation() override;
+	
 	
 protected:
 	// Called when the game starts or when spawned

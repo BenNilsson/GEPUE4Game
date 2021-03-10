@@ -43544,8 +43544,9 @@
               <e p="MainMenuHUD.cpp" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
-              <e p="Equipable.cpp" t="Include" />
               <e p="Fireable.cpp" t="Include" />
+              <e p="GetInventory.cpp" t="Include" />
+              <e p="GetPlayerController.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
             <e p="Inventory" t="Include">
@@ -43553,6 +43554,10 @@
               <e p="InventoryComponent.cpp" t="Include" />
               <e p="Item.cpp" t="Include" />
               <e p="StaticItem.cpp" t="Include" />
+            </e>
+            <e p="Pickups" t="Include">
+              <e p="PickupBase.cpp" t="Include" />
+              <e p="PickupItem.cpp" t="Include" />
             </e>
             <e p="Player" t="Include">
               <e p="PlayerControllerCPP.cpp" t="Include" />
@@ -43580,8 +43585,9 @@
               <e p="MainMenuHUD.h" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
-              <e p="Equipable.h" t="Include" />
               <e p="Fireable.h" t="Include" />
+              <e p="GetInventory.h" t="Include" />
+              <e p="GetPlayerController.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
             <e p="Inventory" t="Include">
@@ -43589,6 +43595,10 @@
               <e p="InventoryComponent.h" t="Include" />
               <e p="Item.h" t="Include" />
               <e p="StaticItem.h" t="Include" />
+            </e>
+            <e p="Pickups" t="Include">
+              <e p="PickupBase.h" t="Include" />
+              <e p="PickupItem.h" t="Include" />
             </e>
             <e p="Player" t="Include">
               <e p="PlayerControllerCPP.h" t="Include" />
