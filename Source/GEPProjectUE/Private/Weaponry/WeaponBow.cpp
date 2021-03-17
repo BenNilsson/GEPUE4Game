@@ -1,10 +1,10 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/Weaponry/WeaponBow.h"
+#include "Weaponry/WeaponBow.h"
 
 #include "Components/ArrowComponent.h"
-#include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
+#include "WeaponCombatTypeEnum.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -43,7 +43,7 @@ bool AWeaponBow::FireReleased_Implementation()
 	AActor* ParentActor = GetParentActor();
 	ActorSpawnParameters.Owner = ParentActor;
 
-	FVector ArrowDirection = Start + (Forward * 2000);
+	FVector ArrowDirection = Start + (Forward * 3000);
 	FRotator SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLoc, ArrowDirection);
 	
 	// Line trace from camera outwards

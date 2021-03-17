@@ -3,8 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
-#include "GEPProjectUE/Public/AI/AIBase.h"
+#include "AI/AIBase.h"
 #include "DeerAI.generated.h"
 
 UCLASS()
@@ -19,9 +18,5 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 };

@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/Weaponry/WeaponBase.h"
+#include "Weaponry/WeaponBase.h"
 
 
 // Sets default values

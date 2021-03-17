@@ -1,11 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/Weaponry/ArrowProjectile.h"
-
+#include "Weaponry/ArrowProjectile.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Perception/AISense_Hearing.h"
 
 
 // Sets default values
@@ -27,23 +28,36 @@ AArrowProjectile::AArrowProjectile()
 	// Projectile Movement
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->UpdatedComponent = CollisionComponent; // Sets what to move
-	ProjectileMovementComponent->InitialSpeed = 2000.0f;
-	ProjectileMovementComponent->MaxSpeed = 2000.0f;
+	ProjectileMovementComponent->InitialSpeed = 2500.0f;
+	ProjectileMovementComponent->MaxSpeed = 2500.0f;
 	ProjectileMovementComponent->bRotationFollowsVelocity = true; // Rotate towards velocity, essential for an arrow
 	ProjectileMovementComponent->bShouldBounce = false;
 
+	// AIPerceptionStimuliSourceComponent
+	AIPerceptionStimuliSourceComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
+	
 	// Lifespan
 	InitialLifeSpan = 10.0f;
+
+	// Set hit status to false
+	HasHit = false;
 }
 
 void AArrowProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
                              FVector NormalImpulse, const FHitResult& Hit)
 {
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr))
+	// Make noise
+	//UAISense_Hearing::ReportNoiseEvent(GetWorld(), Hit.Location, 2.0f, nullptr, 500.0f);
+	//MakeNoise(2.0f, this->GetInstigatorController()->GetPawn(), Hit.Location);
+	
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && !HasHit)
 	{
+		// Disable arrow damage
+		HasHit = true;
+
 		// Deal Damage
 		UGameplayStatics::ApplyDamage(OtherActor, 10.0f, this->GetInstigatorController(), this,
-        TSubclassOf<UDamageType>(UDamageType::StaticClass()));
+		TSubclassOf<UDamageType>(UDamageType::StaticClass()));
 	}	
 }
 

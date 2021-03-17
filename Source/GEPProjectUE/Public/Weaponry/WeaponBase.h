@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GEPProjectUE/Public/Interfaces/Fireable.h"
-#include "GEPProjectUE/Public/Interfaces/Weaponable.h"
+#include "Interfaces/Fireable.h"
+#include "Interfaces/Weaponable.h"
 
 
 #include "WeaponBase.generated.h"

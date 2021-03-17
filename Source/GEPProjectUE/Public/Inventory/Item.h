@@ -19,6 +19,10 @@ class GEPPROJECTUE_API UItem : public UObject
 public:
 	UItem();
 
+	/* Item ID */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Item")
+	int ItemID;
+	
 	/* Item Mesh */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Item")
 	UStaticMesh* ItemMesh;
@@ -35,6 +39,14 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Item", meta = (MultiLine = true))
 	FText ItemDescription;
 
+	/* Max Size */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item")
+	int ItemMaxStackSize;
+
+	/* Current Size */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item")
+	int ItemCurrentStackSize;
+	
 	/* Owner of the Item */
 	UPROPERTY()
 	UInventoryComponent* Inventory;

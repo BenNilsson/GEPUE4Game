@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/Pickups/PickupItem.h"
-#include "GEPProjectUE/Public/Interfaces/GetPlayerController.h"
+#include "Pickups/PickupItem.h"
+#include "Interfaces/GetPlayerController.h"
 #include "Inventory/InventoryComponent.h"
 #include "Inventory/Item.h"
 #include "Player/PlayerControllerCPP.h"

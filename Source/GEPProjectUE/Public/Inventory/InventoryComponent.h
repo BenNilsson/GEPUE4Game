@@ -19,7 +19,7 @@ public:
 	UInventoryComponent();
 
 	UFUNCTION(BlueprintCallable)
-	bool AddItem(class UItem* Item);
+	bool AddItem(class UItem* Item, int amount = 1);
 	UFUNCTION(BlueprintCallable)
 	bool RemoveItem(class UItem* Item);
 

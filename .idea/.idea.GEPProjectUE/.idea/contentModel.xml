@@ -43532,6 +43532,7 @@
             <e p="AI" t="Include">
               <e p="AIBase.cpp" t="Include" />
               <e p="DeerAI.cpp" t="Include" />
+              <e p="DeerAIController.cpp" t="Include" />
             </e>
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.cpp" t="Include" />
@@ -43573,6 +43574,7 @@
             <e p="AI" t="Include">
               <e p="AIBase.h" t="Include" />
               <e p="DeerAI.h" t="Include" />
+              <e p="DeerAIController.h" t="Include" />
             </e>
             <e p="Anim" t="Include">
               <e p="UAnimInstancePlayer.h" t="Include" />
@@ -43586,6 +43588,7 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="Fireable.h" t="Include" />
+              <e p="GetBaseAI.h" t="Include" />
               <e p="GetInventory.h" t="Include" />
               <e p="GetPlayerController.h" t="Include" />
               <e p="Weaponable.h" t="Include" />

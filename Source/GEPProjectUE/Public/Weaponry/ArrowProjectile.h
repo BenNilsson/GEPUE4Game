@@ -17,6 +17,12 @@ class GEPPROJECTUE_API AArrowProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileMovementComponent;
 
+	bool HasHit;
+
+	/* AIStumuliSourceComponent */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class UAIPerceptionStimuliSourceComponent* AIPerceptionStimuliSourceComponent;
+
 public:
 	// Sets default values for this actor's properties
 	AArrowProjectile();

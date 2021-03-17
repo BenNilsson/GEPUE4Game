@@ -1,18 +1,18 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/Player/PlayerControllerCPP.h"
-
-#include "GEPProjectUE/Public/Anim/UAnimInstancePlayer.h"
+#include "Player/PlayerControllerCPP.h"
+#include "Anim/UAnimInstancePlayer.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GEPProjectUE/Public/Inventory/Item.h"
-#include "GEPProjectUE/Public/Inventory/InventoryComponent.h"
-#include "GEPProjectUE/Public/Components/HealthComponent.h"
-#include "GEPProjectUE/Public/WeaponCombatTypeEnum.h"
-#include "GEPProjectUE/Public/Interfaces/Fireable.h"
-#include "GEPProjectUE/Public/Interfaces/Weaponable.h"
+#include "Inventory/Item.h"
+#include "Inventory/InventoryComponent.h"
+#include "Components/HealthComponent.h"
+#include "WeaponCombatTypeEnum.h"
+#include "Interfaces/Fireable.h"
+#include "Interfaces/Weaponable.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 // Sets default values
 APlayerControllerCPP::APlayerControllerCPP()
@@ -51,6 +51,9 @@ APlayerControllerCPP::APlayerControllerCPP()
 	Weapon = CreateDefaultSubobject<UChildActorComponent>(TEXT("WeaponSlot"));
 	Weapon->SetupAttachment(WeaponSocketSceneComponent);
 	Weapon->CreateChildActor();
+
+	// AIPerceptionStimuliSourceComponent
+	AIPerceptionStimuliSourceComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
 	
 	// Set Base Controller Values
 	IsSprinting = false;
@@ -86,7 +89,7 @@ void APlayerControllerCPP::BeginPlay()
 	Super::BeginPlay();
 
 	// Set Anim Instance
-	AnimInstancePlayer = Cast<UAnimInstancePlayer>(ACharacter::GetMesh()->GetAnimInstance());
+	AnimInstancePlayer = Cast<UAnimInstancePlayer>(GetMesh()->GetAnimInstance());
 
 	// Set walk speed
 	GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
@@ -106,14 +109,14 @@ void APlayerControllerCPP::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	PlayerInputComponent->BindAxis("TurnRate", this, &APlayerControllerCPP::TurnAtRate);
 
 	// Bind Mapping Actions
-	PlayerInputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Sprint", EInputEvent::IE_Pressed, this, &APlayerControllerCPP::Sprint);
-	PlayerInputComponent->BindAction("Sprint", EInputEvent::IE_Released, this, &APlayerControllerCPP::Sprint);
-	PlayerInputComponent->BindAction("Crouch", EInputEvent::IE_Pressed, this, &APlayerControllerCPP::CrouchTriggered);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerControllerCPP::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerControllerCPP::Sprint);
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &APlayerControllerCPP::CrouchTriggered);
 
 	// Weapon Fire Actions
-	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerControllerCPP::WeaponFireTriggered);
-	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Released, this, &APlayerControllerCPP::WeaponFireReleased);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &APlayerControllerCPP::WeaponFireTriggered);
+	PlayerInputComponent->BindAction("Fire", IE_Released, this, &APlayerControllerCPP::WeaponFireReleased);
 	
 	
 	TurnRate = 80;
@@ -162,14 +165,14 @@ void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
 
 	switch (State)
 	{
-		case EPlayer_Combat_State::Melee:
+		case Melee:
 			bUseControllerRotationYaw = false;
 			break;
-		case EPlayer_Combat_State::Ranged:
+		case Ranged:
 			// Don't rotate camera mesh, only the camera
 			bUseControllerRotationYaw = true;
 			break;
-		case EPlayer_Combat_State::Passive:
+		case Passive:
 			bUseControllerRotationYaw = false;
 			break;
 		default:
@@ -186,17 +189,17 @@ void APlayerControllerCPP::WeaponFireTriggered()
 	// Change state depending on weapon type
 	if (WeaponChildActor->GetClass()->ImplementsInterface(UWeaponable::StaticClass()))
 	{
-		EWeapon_Combat_Type WeaponType = IWeaponable::Execute_GetWeaponType(WeaponChildActor);
+		const EWeapon_Combat_Type WeaponType = IWeaponable::Execute_GetWeaponType(WeaponChildActor);
 		switch (WeaponType)
 		{
 			case EWeapon_Combat_Type::Melee:
-				SetState(EPlayer_Combat_State::Melee);
+				SetState(Melee);
 				break;
 			case EWeapon_Combat_Type::Ranged:
-				SetState(EPlayer_Combat_State::Ranged);
+				SetState(Ranged);
 				break;
 			case EWeapon_Combat_Type::None:
-				SetState(EPlayer_Combat_State::Passive);
+				SetState(Passive);
 				break;
 			default:
 				break;
@@ -220,7 +223,7 @@ void APlayerControllerCPP::WeaponFireReleased()
 
 	switch (EPlayerCombatState)
 	{
-	    case EPlayer_Combat_State::Ranged:
+	    case Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
 			break;

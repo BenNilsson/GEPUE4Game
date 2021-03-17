@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GEPProjectUE/Public/HUD/GEPProjectUEHUD.h"
+#include "HUD/GEPProjectUEHUD.h"
 #include "Engine/Canvas.h"
 #include "Engine/Texture2D.h"
 #include "TextureResource.h"

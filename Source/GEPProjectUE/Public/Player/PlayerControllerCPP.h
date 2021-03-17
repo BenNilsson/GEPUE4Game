@@ -7,7 +7,6 @@
 #include "GameFramework/Character.h"
 #include "Interfaces/GetInventory.h"
 #include "Interfaces/GetPlayerController.h"
-
 #include "PlayerControllerCPP.generated.h"
 
 class UItem;
@@ -53,6 +52,10 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter, public IGetPlay
 	/* COMBAT STATE */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	TEnumAsByte<EPlayer_Combat_State> EPlayerCombatState;
+
+	/* AIStumuliSourceComponent */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class UAIPerceptionStimuliSourceComponent* AIPerceptionStimuliSourceComponent;
 	
 public:
 	// Sets default values for this character's properties
