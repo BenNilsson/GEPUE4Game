@@ -11,7 +11,10 @@ AAIBase::AAIBase()
 	
 	// Health Component
 	Health = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
-	
+
+	// Set Speeds
+	WalkingSpeed = 200.0f;
+	RunningSpeed = 800.0f;
 }
 
 // Called when the game starts or when spawned

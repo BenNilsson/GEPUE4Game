@@ -2,8 +2,6 @@
 
 #include "Components/HealthComponent.h"
 
-#include <string>
-
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
 {

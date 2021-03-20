@@ -46,10 +46,6 @@ AArrowProjectile::AArrowProjectile()
 void AArrowProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
                              FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Make noise
-	//UAISense_Hearing::ReportNoiseEvent(GetWorld(), Hit.Location, 2.0f, nullptr, 500.0f);
-	//MakeNoise(2.0f, this->GetInstigatorController()->GetPawn(), Hit.Location);
-	
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && !HasHit)
 	{
 		// Disable arrow damage

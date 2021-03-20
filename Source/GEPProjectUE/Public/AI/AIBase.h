@@ -29,6 +29,7 @@ protected:
 	class UHealthComponent* Health;
 
 	
+	
 public:	
 
 	// Called to bind functionality to input
@@ -36,5 +37,11 @@ public:
 
 	/* INTERFACES */
 	virtual AAIBase* GetAIBase_Implementation() override { return this; }
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float WalkingSpeed;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float RunningSpeed;
 
 };

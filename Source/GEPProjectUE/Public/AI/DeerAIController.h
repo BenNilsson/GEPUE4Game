@@ -17,6 +17,7 @@ class GEPPROJECTUE_API ADeerAIController : public AAIController
 	virtual void BeginPlay() override;
 	virtual void OnPossess(APawn* InPawn) override;
 
+	
 public:
 	ADeerAIController();
 	
