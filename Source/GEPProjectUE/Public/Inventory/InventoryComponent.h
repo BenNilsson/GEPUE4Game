@@ -22,6 +22,10 @@ public:
 	bool AddItem(class UItem* Item, int amount = 1);
 	UFUNCTION(BlueprintCallable)
 	bool RemoveItem(class UItem* Item);
+	UFUNCTION(BlueprintCallable)
+    bool ContainsItem(class UItem* Item);
+	UFUNCTION(BlueprintCallable)
+    class UArrowItem* GetArrow();
 
 	UPROPERTY(EditDefaultsOnly, Category="Inventory")
 	int MaxSize;

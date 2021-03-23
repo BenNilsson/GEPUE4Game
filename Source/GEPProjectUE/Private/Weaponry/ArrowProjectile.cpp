@@ -6,7 +6,6 @@
 #include "Components/BoxComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "Perception/AISense_Hearing.h"
 
 
 // Sets default values

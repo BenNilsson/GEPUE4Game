@@ -11,6 +11,8 @@ class GEPPROJECTUE_API AArrowProjectile : public AActor
 {
 	GENERATED_BODY()
 
+protected:
+	
 	UPROPERTY(VisibleDefaultsOnly, Category = "Projectile")
 	class UBoxComponent* CollisionComponent;
 
@@ -28,7 +30,7 @@ public:
 	AArrowProjectile();
 
 	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+	virtual void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 	FORCEINLINE class UBoxComponent* GetCollisionComp() const { return CollisionComponent; }
 

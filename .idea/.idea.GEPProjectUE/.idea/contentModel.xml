@@ -43551,6 +43551,7 @@
               <e p="Weaponable.cpp" t="Include" />
             </e>
             <e p="Inventory" t="Include">
+              <e p="ArrowItem.cpp" t="Include" />
               <e p="FoodItem.cpp" t="Include" />
               <e p="InventoryComponent.cpp" t="Include" />
               <e p="Item.cpp" t="Include" />
@@ -43565,6 +43566,7 @@
             </e>
             <e p="WeaponCombatTypeEnum.cpp" t="Include" />
             <e p="Weaponry" t="Include">
+              <e p="ArrowExplosionProjectile.cpp" t="Include" />
               <e p="ArrowProjectile.cpp" t="Include" />
               <e p="WeaponBase.cpp" t="Include" />
               <e p="WeaponBow.cpp" t="Include" />
@@ -43594,6 +43596,7 @@
               <e p="Weaponable.h" t="Include" />
             </e>
             <e p="Inventory" t="Include">
+              <e p="ArrowItem.h" t="Include" />
               <e p="FoodItem.h" t="Include" />
               <e p="InventoryComponent.h" t="Include" />
               <e p="Item.h" t="Include" />
@@ -43608,6 +43611,7 @@
             </e>
             <e p="WeaponCombatTypeEnum.h" t="Include" />
             <e p="Weaponry" t="Include">
+              <e p="ArrowExplosionProjectile.h" t="Include" />
               <e p="ArrowProjectile.h" t="Include" />
               <e p="WeaponBase.h" t="Include" />
               <e p="WeaponBow.h" t="Include" />

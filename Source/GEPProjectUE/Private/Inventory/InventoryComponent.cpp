@@ -2,6 +2,8 @@
 
 
 #include "Inventory/InventoryComponent.h"
+
+#include "Inventory/ArrowItem.h"
 #include "Inventory/Item.h"
 
 // Sets default values for this component's properties
@@ -18,7 +20,11 @@ void UInventoryComponent::BeginPlay()
 	// ...
 	for (auto& Item : DefaultItems)
 	{
-		AddItem((Item));
+		const auto StackSize = Item->ItemCurrentStackSize;
+		for (int i = 0; i < StackSize; ++i)
+		{
+			AddItem(Item);
+		}
 	}
 }
 
@@ -32,10 +38,10 @@ bool UInventoryComponent::AddItem(UItem* Item, int amount)
 	{
 		if (i >= Items.Num() || !Item)
 			continue;
-		
+	
 		if (Items[i]->ItemID != Item->ItemID)
 			continue;
-		
+	
 		// ITEM FOUND
 		// If stack size is less than max stack size, increment
 		if (Items[i]->ItemCurrentStackSize < Items[i]->ItemMaxStackSize)
@@ -51,7 +57,6 @@ bool UInventoryComponent::AddItem(UItem* Item, int amount)
 	Item->ItemCurrentStackSize = 1;
 	Item->Inventory = this;
 	OnInventoryUpdated.Broadcast();
-	
 	return true;
 }
 
@@ -63,14 +68,14 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
 	// Iterate through the items and check if an item with the same type is currently in the inventory
 	for(int i = MaxSize - 1; i >= 0; i--)
 	{
-		if (Items.Num() < i)
+		if (Items.Num() <= i)
 			continue;
 		
 		if (Items[i]->ItemID != Item->ItemID)
 			continue;
 	
 		// If stack size is greater than max stack size, remove one
-		if (Items[i]->ItemCurrentStackSize > Items[i]->ItemMaxStackSize)
+		if (Items[i]->ItemCurrentStackSize > 0)
 		{
 			Items[i]->ItemCurrentStackSize--;
 			// Check if 0, if so delete
@@ -89,4 +94,34 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
 	OnInventoryUpdated.Broadcast();
 
 	return true;
+}
+
+bool UInventoryComponent::ContainsItem(UItem* Item)
+{
+	if (!Item || Items.Num() < 0)
+		return false;
+
+	Items.FindByPredicate([&](UItem* InItem)
+	{
+		return InItem->ItemID == Item->ItemID;
+	});
+
+	return false;
+}
+
+UArrowItem* UInventoryComponent::GetArrow()
+{
+	if (Items.Num() < 0)
+		return nullptr;
+
+	for (int i = 0; i < Items.Num(); i++)
+	{
+		if (Items[i]->IsA(UArrowItem::StaticClass()))
+		{
+			UArrowItem* Item = Cast<UArrowItem>(Items[i]);
+			return Item;
+		}
+	}
+
+	return nullptr;
 }

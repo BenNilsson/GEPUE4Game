@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "Interfaces/GetInventory.h"
 #include "Interfaces/GetPlayerController.h"
+
 #include "PlayerControllerCPP.generated.h"
 
 class UItem;
@@ -84,6 +85,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Controller Settings")
 	float BaseMovementSpeed;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player")
+	class UArrowItem* ArrowItem;
+	
 	void DoJump();
 
 	/* INTERFACES */

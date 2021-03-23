@@ -12,6 +12,7 @@
 #include "WeaponCombatTypeEnum.h"
 #include "Interfaces/Fireable.h"
 #include "Interfaces/Weaponable.h"
+#include "Inventory/ArrowItem.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 // Sets default values
@@ -196,6 +197,10 @@ void APlayerControllerCPP::WeaponFireTriggered()
 				SetState(Melee);
 				break;
 			case EWeapon_Combat_Type::Ranged:
+				ArrowItem = InventoryComponent->GetArrow();
+				if (!ArrowItem)
+					return;
+			
 				SetState(Ranged);
 				break;
 			case EWeapon_Combat_Type::None:
@@ -226,6 +231,12 @@ void APlayerControllerCPP::WeaponFireReleased()
 	    case Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
+		
+	    		ArrowItem = InventoryComponent->GetArrow();
+				if (!ArrowItem)
+					return;
+
+				InventoryComponent->RemoveItem(ArrowItem);		
 			break;
 		default:
 			break;
