@@ -5,11 +5,11 @@
 #include "CoreMinimal.h"
 
 #include "UObject/Interface.h"
-#include "GetPlayerController.generated.h"
+#include "GetPlayerCharacter.generated.h"
 
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
-class UGetPlayerController : public UInterface
+class UGetPlayerCharacter : public UInterface
 {
 	GENERATED_BODY()
 };
@@ -17,7 +17,7 @@ class UGetPlayerController : public UInterface
 /**
  * 
  */
-class GEPPROJECTUE_API IGetPlayerController
+class GEPPROJECTUE_API IGetPlayerCharacter
 {
 	GENERATED_BODY()
 
@@ -25,5 +25,5 @@ class GEPPROJECTUE_API IGetPlayerController
 public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	class APlayerControllerCPP* GetPlayerController();
+	class APlayerCharacter* GetPlayerCharacter();
 };

@@ -3,9 +3,9 @@
 
 #include "Inventory/ArrowItem.h"
 
-#include "Player/PlayerControllerCPP.h"
+#include "Player/PlayerCharacter.h"
 
-void UArrowItem::Use(APlayerControllerCPP* Character)
+void UArrowItem::Use(APlayerCharacter* Character)
 {
 	if (!Character)
 		return;

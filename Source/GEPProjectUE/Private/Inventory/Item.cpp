@@ -11,6 +11,6 @@ UItem::UItem()
 	ItemMaxStackSize = 50;
 }
 
-void UItem::Use(APlayerControllerCPP* Character)
+void UItem::Use(APlayerCharacter* Character)
 {
 }

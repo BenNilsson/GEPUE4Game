@@ -2,7 +2,7 @@
 #include "GEPProjectUE/Public/Anim/UAnimInstancePlayer.h"
 
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Player/PlayerControllerCPP.h"
+#include "Player/PlayerCharacter.h"
 
 UAnimInstancePlayer::UAnimInstancePlayer()
 {
@@ -27,7 +27,7 @@ void UAnimInstancePlayer::NativeUpdateAnimation(float DeltaSeconds)
 void UAnimInstancePlayer::NativeBeginPlay()
 {
 	Super::NativeBeginPlay();
-	PlayerControllerInstance = Cast<APlayerControllerCPP>(GetOwningActor());
+	PlayerControllerInstance = Cast<APlayerCharacter>(GetOwningActor());
 }
 
 

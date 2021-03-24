@@ -43548,7 +43548,7 @@
               <e p="Fireable.cpp" t="Include" />
               <e p="GetArrowItem.cpp" t="Include" />
               <e p="GetInventory.cpp" t="Include" />
-              <e p="GetPlayerController.cpp" t="Include" />
+              <e p="GetPlayerCharacter.cpp" t="Include" />
               <e p="GetWeaponBow.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
@@ -43564,7 +43564,8 @@
               <e p="PickupItem.cpp" t="Include" />
             </e>
             <e p="Player" t="Include">
-              <e p="PlayerControllerCPP.cpp" t="Include" />
+              <e p="PlayerCharacter.cpp" t="Include" />
+              <e p="PlayerControllerGEP.cpp" t="Include" />
             </e>
             <e p="WeaponCombatTypeEnum.cpp" t="Include" />
             <e p="Weaponry" t="Include">
@@ -43595,7 +43596,7 @@
               <e p="GetArrowItem.h" t="Include" />
               <e p="GetBaseAI.h" t="Include" />
               <e p="GetInventory.h" t="Include" />
-              <e p="GetPlayerController.h" t="Include" />
+              <e p="GetPlayerCharacter.h" t="Include" />
               <e p="GetWeaponBow.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
@@ -43611,7 +43612,8 @@
               <e p="PickupItem.h" t="Include" />
             </e>
             <e p="Player" t="Include">
-              <e p="PlayerControllerCPP.h" t="Include" />
+              <e p="PlayerCharacter.h" t="Include" />
+              <e p="PlayerControllerGEP.h" t="Include" />
             </e>
             <e p="WeaponCombatTypeEnum.h" t="Include" />
             <e p="Weaponry" t="Include">

@@ -15,5 +15,5 @@ class GEPPROJECTUE_API UFoodItem : public UItem
 	GENERATED_BODY()
 
 protected:
-	virtual void Use(class APlayerControllerCPP* Character) override;
+	virtual void Use(class APlayerCharacter* Character) override;
 };

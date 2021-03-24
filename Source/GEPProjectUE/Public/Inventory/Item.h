@@ -52,9 +52,9 @@ public:
 	UInventoryComponent* Inventory;
 
 	/* PUBLIC FUNCTIONS */
-	virtual void Use(class APlayerControllerCPP* Character);
+	virtual void Use(class APlayerCharacter* Character);
 	
 	// Allows for implementation of function within BluePrints
 	UFUNCTION(BlueprintImplementableEvent)
-	void UseBP(class APlayerControllerCPP* Character); 
+	void UseBP(class APlayerCharacter* Character); 
 };

@@ -17,7 +17,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TSubclassOf<class AArrowProjectile> ArrowProjectile;
 
-	virtual void Use(APlayerControllerCPP* Character) override;
+	virtual void Use(APlayerCharacter* Character) override;
 
 	virtual UArrowItem* GetArrowItem_Implementation() override;
 };

@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 
-#include "Player/PlayerControllerCPP.h"
+#include "Player/PlayerCharacter.h"
 #include "Runtime/Engine/Classes/Animation/AnimInstance.h"
 #include "UAnimInstancePlayer.generated.h"
 
@@ -15,7 +15,7 @@ public:
 	UAnimInstancePlayer();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Generic")
-	APlayerControllerCPP* PlayerControllerInstance;
+	APlayerCharacter* PlayerControllerInstance;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Generic")
 	float Speed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Generic")

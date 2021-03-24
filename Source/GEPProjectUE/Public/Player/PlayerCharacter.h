@@ -6,8 +6,8 @@
 
 #include "GameFramework/Character.h"
 #include "Interfaces/GetInventory.h"
-#include "Interfaces/GetPlayerController.h"
-#include "PlayerControllerCPP.generated.h"
+#include "Interfaces/GetPlayerCharacter.h"
+#include "PlayerCharacter.generated.h"
 
 class UItem;
 
@@ -21,7 +21,7 @@ enum EPlayer_Combat_State
 
 
 UCLASS()
-class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter, public IGetPlayerController, public IGetInventory
+class GEPPROJECTUE_API APlayerCharacter : public ACharacter, public IGetPlayerCharacter, public IGetInventory
 {
 	GENERATED_BODY()
 
@@ -59,7 +59,7 @@ class GEPPROJECTUE_API APlayerControllerCPP : public ACharacter, public IGetPlay
 	
 public:
 	// Sets default values for this character's properties
-	APlayerControllerCPP();
+	APlayerCharacter();
 
 	/* Use Item */
 	UFUNCTION(BlueprintCallable)
@@ -91,23 +91,18 @@ public:
 
 	/* INTERFACES */
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	APlayerControllerCPP* GetPlayerController();
-	virtual APlayerControllerCPP* GetPlayerController_Implementation() override;
+	APlayerCharacter* GetPlayerCharacter();
+	virtual APlayerCharacter* GetPlayerCharacter_Implementation() override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UInventoryComponent* GetInventory();
 	virtual UInventoryComponent* GetInventory_Implementation() override;
 	
-	
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+
+	void LookUp();
+	void Turn();
 	
 	void TurnAtRate(float Rate);
 	void LookUpAtRate(float Rate);
@@ -118,8 +113,11 @@ protected:
 	void WeaponFireReleased();
 
 	void Sprint();
-
+	void Jump();
 	void CrouchTriggered();
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
 	float TurnRate;

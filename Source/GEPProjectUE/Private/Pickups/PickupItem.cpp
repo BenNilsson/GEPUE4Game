@@ -2,10 +2,10 @@
 
 
 #include "Pickups/PickupItem.h"
-#include "Interfaces/GetPlayerController.h"
+#include "Interfaces/GetPlayerCharacter.h"
 #include "Inventory/InventoryComponent.h"
 #include "Inventory/Item.h"
-#include "Player/PlayerControllerCPP.h"
+#include "Player/PlayerCharacter.h"
 
 void APickupItem::BeginPlay()
 {
@@ -24,17 +24,17 @@ void APickupItem::OnActivate_Implementation(AActor* PickedUpBy)
 		return;
 
 	// Check if whoever activated this is a player
-	if (PickedUpBy->GetClass()->ImplementsInterface(UGetPlayerController::StaticClass()))
+	if (PickedUpBy->GetClass()->ImplementsInterface(UGetPlayerCharacter::StaticClass()))
 	{
-		APlayerControllerCPP* PlayerControllerCPP = IGetPlayerController::Execute_GetPlayerController(PickedUpBy);
+		APlayerCharacter* PlayerCharacter = IGetPlayerCharacter::Execute_GetPlayerCharacter(PickedUpBy);
 
-		if (!PlayerControllerCPP)
+		if (!PlayerCharacter)
 			return;
 
 		// Check for inventory interface
-		if (PlayerControllerCPP->GetClass()->ImplementsInterface(UGetInventory::StaticClass()))
+		if (PlayerCharacter->GetClass()->ImplementsInterface(UGetInventory::StaticClass()))
 		{
-			UInventoryComponent* Inventory = IGetInventory::Execute_GetInventory(PlayerControllerCPP);
+			UInventoryComponent* Inventory = IGetInventory::Execute_GetInventory(PlayerCharacter);
 
 			if (!Inventory)
 				return;

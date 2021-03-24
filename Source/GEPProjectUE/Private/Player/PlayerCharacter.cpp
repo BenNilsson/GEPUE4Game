@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Player/PlayerControllerCPP.h"
+#include "Player/PlayerCharacter.h"
 #include "Anim/UAnimInstancePlayer.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -17,7 +17,7 @@
 #include "Weaponry/WeaponBow.h"
 
 // Sets default values
-APlayerControllerCPP::APlayerControllerCPP()
+APlayerCharacter::APlayerCharacter()
 {
 	// Create Camera Boom arm
 	CameraBoomArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoomArm")); // Create a USpringArmComponent
@@ -59,9 +59,12 @@ APlayerControllerCPP::APlayerControllerCPP()
 	
 	// Set Base Controller Values
 	IsSprinting = false;
+
+	TurnRate = 80;
+	LookRate = 80;
 }
 
-void APlayerControllerCPP::UseItem(UItem* Item)
+void APlayerCharacter::UseItem(UItem* Item)
 {
 	if (Item)
 	{
@@ -70,23 +73,23 @@ void APlayerControllerCPP::UseItem(UItem* Item)
 	}
 }
 
-void APlayerControllerCPP::DoJump()
+void APlayerCharacter::DoJump()
 {
 	ACharacter::Jump();
 }
 
-APlayerControllerCPP* APlayerControllerCPP::GetPlayerController_Implementation()
+APlayerCharacter* APlayerCharacter::GetPlayerCharacter_Implementation()
 {
 	return this;
 }
 
-UInventoryComponent* APlayerControllerCPP::GetInventory_Implementation()
+UInventoryComponent* APlayerCharacter::GetInventory_Implementation()
 {
 	return InventoryComponent;
 }
 
 // Called when the game starts or when spawned
-void APlayerControllerCPP::BeginPlay()
+void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -97,35 +100,7 @@ void APlayerControllerCPP::BeginPlay()
 	GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
 }
 
-// Called to bind functionality to input
-void APlayerControllerCPP::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	check(PlayerInputComponent);
-
-	// Bind Mapping Axis' to functions defined
-	PlayerInputComponent->BindAxis("MoveForward", this, &APlayerControllerCPP::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &APlayerControllerCPP::MoveRight);
-	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &APlayerControllerCPP::LookUpAtRate);
-	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &APlayerControllerCPP::TurnAtRate);
-
-	// Bind Mapping Actions
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerControllerCPP::Sprint);
-	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerControllerCPP::Sprint);
-	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &APlayerControllerCPP::CrouchTriggered);
-
-	// Weapon Fire Actions
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &APlayerControllerCPP::WeaponFireTriggered);
-	PlayerInputComponent->BindAction("Fire", IE_Released, this, &APlayerControllerCPP::WeaponFireReleased);
-	
-	
-	TurnRate = 80;
-	LookRate = 80;
-}
-
-void APlayerControllerCPP::MoveForward(float Value)
+void APlayerCharacter::MoveForward(float Value)
 {
 	if (Controller != nullptr && Value != 0.0)
 	{
@@ -138,7 +113,7 @@ void APlayerControllerCPP::MoveForward(float Value)
 	}
 }
 
-void APlayerControllerCPP::MoveRight(float Value)
+void APlayerCharacter::MoveRight(float Value)
 {
 	if (Controller != nullptr && Value != 0.0)
 	{
@@ -150,18 +125,26 @@ void APlayerControllerCPP::MoveRight(float Value)
 	}
 }
 
-void APlayerControllerCPP::TurnAtRate(float Rate)
+void APlayerCharacter::LookUp()
+{
+}
+
+void APlayerCharacter::Turn()
+{
+}
+
+void APlayerCharacter::TurnAtRate(float Rate)
 {
 	if (Controller != nullptr && Rate != 0.0)	
 		AddControllerYawInput(Rate * GetWorld()->GetDeltaSeconds() * TurnRate);
 }
 
-void APlayerControllerCPP::LookUpAtRate(float Rate)
+void APlayerCharacter::LookUpAtRate(float Rate)
 {
 	AddControllerPitchInput(Rate * GetWorld()->GetDeltaSeconds() * LookRate);
 }
 
-void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
+void APlayerCharacter::SetState(EPlayer_Combat_State State)
 {
 	EPlayerCombatState = State;
 
@@ -182,7 +165,7 @@ void APlayerControllerCPP::SetState(EPlayer_Combat_State State)
 	}
 }
 
-void APlayerControllerCPP::WeaponFireTriggered()
+void APlayerCharacter::WeaponFireTriggered()
 {
 	if (Weapon == nullptr) return;
 	
@@ -235,7 +218,7 @@ void APlayerControllerCPP::WeaponFireTriggered()
 	
 }
 
-void APlayerControllerCPP::WeaponFireReleased()
+void APlayerCharacter::WeaponFireReleased()
 {
 	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
 
@@ -265,7 +248,7 @@ void APlayerControllerCPP::WeaponFireReleased()
 		IFireable::Execute_FireReleased(WeaponChildActor);
 }
 
-void APlayerControllerCPP::Sprint()
+void APlayerCharacter::Sprint()
 {
 	if (IsCrouching) return;
 
@@ -273,7 +256,12 @@ void APlayerControllerCPP::Sprint()
 	GetCharacterMovement()->MaxWalkSpeed = IsSprinting ? BaseMovementSpeed * SprintModifier : BaseMovementSpeed;
 }
 
-void APlayerControllerCPP::CrouchTriggered()
+void APlayerCharacter::Jump()
+{
+	ACharacter::Jump();
+}
+
+void APlayerCharacter::CrouchTriggered()
 {
 	if (!IsCrouching)
 	{
