@@ -26,11 +26,16 @@ void UHealthComponent::BeginPlay()
 void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
 	AController* InstigatedBy, AActor* DamageCauser)
 {
+	if (DamagedActor == nullptr)
+		return;
+	
 	if (Damage <= 0) return;
 
 	Health -= Damage; // Decrease health
 	Health = FMath::Clamp(Health, .0f, HealthStart); // Clamp to avoid going below 0
 
-	GEngine->AddOnScreenDebugMessage(-10, 1.f, FColor::Red, FString::Printf(TEXT("Health: %f"), Health));
+	if (Health <= 0)
+		OnHealthBelowZero.Broadcast();
+	
 }
 

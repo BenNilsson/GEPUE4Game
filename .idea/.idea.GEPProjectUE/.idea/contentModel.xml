@@ -43546,8 +43546,10 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="Fireable.cpp" t="Include" />
+              <e p="GetArrowItem.cpp" t="Include" />
               <e p="GetInventory.cpp" t="Include" />
               <e p="GetPlayerController.cpp" t="Include" />
+              <e p="GetWeaponBow.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
             <e p="Inventory" t="Include">
@@ -43590,9 +43592,11 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="Fireable.h" t="Include" />
+              <e p="GetArrowItem.h" t="Include" />
               <e p="GetBaseAI.h" t="Include" />
               <e p="GetInventory.h" t="Include" />
               <e p="GetPlayerController.h" t="Include" />
+              <e p="GetWeaponBow.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
             <e p="Inventory" t="Include">

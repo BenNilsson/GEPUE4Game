@@ -20,3 +20,8 @@ void ADeerAI::BeginPlay()
 	Super::BeginPlay();
 	
 }
+
+void ADeerAI::AIDied()
+{
+	Destroy(false,false);
+}

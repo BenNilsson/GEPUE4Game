@@ -51,7 +51,7 @@ void AArrowProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherAct
 		HasHit = true;
 
 		// Deal Damage
-		UGameplayStatics::ApplyDamage(OtherActor, 10.0f, this->GetInstigatorController(), this,
+		UGameplayStatics::ApplyDamage(OtherActor, 50.0f, this->GetInstigatorController(), this,
 		TSubclassOf<UDamageType>(UDamageType::StaticClass()));
 	}	
 }

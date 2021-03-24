@@ -54,6 +54,11 @@ bool AWeaponBow::FireReleased_Implementation()
 	return true;
 }
 
+AWeaponBow* AWeaponBow::GetWeaponBow_Implementation()
+{
+	return this;
+}
+
 // Called when the game starts or when spawned
 void AWeaponBow::BeginPlay()
 {

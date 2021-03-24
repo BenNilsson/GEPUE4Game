@@ -3,3 +3,18 @@
 
 #include "Inventory/ArrowItem.h"
 
+#include "Player/PlayerControllerCPP.h"
+
+void UArrowItem::Use(APlayerControllerCPP* Character)
+{
+	if (!Character)
+		return;
+
+	// Select Arrow On Player
+	Character->ArrowItem = this;
+}
+
+UArrowItem* UArrowItem::GetArrowItem_Implementation()
+{
+	return this;
+}

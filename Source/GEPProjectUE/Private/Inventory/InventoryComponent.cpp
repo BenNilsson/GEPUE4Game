@@ -2,7 +2,6 @@
 
 
 #include "Inventory/InventoryComponent.h"
-
 #include "Inventory/ArrowItem.h"
 #include "Inventory/Item.h"
 
@@ -118,8 +117,13 @@ UArrowItem* UInventoryComponent::GetArrow()
 	{
 		if (Items[i]->IsA(UArrowItem::StaticClass()))
 		{
-			UArrowItem* Item = Cast<UArrowItem>(Items[i]);
-			return Item;
+			// Get Bow & Change Arrow Type
+			if (!Items[i]->GetClass()->ImplementsInterface(UGetArrowItem::StaticClass()))
+				continue;
+					
+			UArrowItem* ArrowItem = IGetArrowItem::Execute_GetArrowItem(Items[i]);
+			if (ArrowItem)
+				return ArrowItem;
 		}
 	}
 

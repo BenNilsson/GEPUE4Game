@@ -7,19 +7,23 @@
 
 AArrowExplosionProjectile::AArrowExplosionProjectile() : Super()
 {
-	
+	DamageRadius = 500;
 }
 
 void AArrowExplosionProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && !HasHit)
-	{
-		// Disable arrow damage
-		HasHit = true;
+	if (HasHit)
+		return;
+	
+	// Disable arrow damage
+	HasHit = true;
 
-		// Deal Damage
-		UGameplayStatics::ApplyDamage(OtherActor, 10.0f, this->GetInstigatorController(), this,
-        TSubclassOf<UDamageType>(UDamageType::StaticClass()));
-	}	
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(GetOwner());
+	
+	// Deal Damage
+	UGameplayStatics::ApplyRadialDamage(GetWorld(), 50, GetActorLocation(), DamageRadius, TSubclassOf<UDamageType>(UDamageType::StaticClass()),
+    ActorsToIgnore, this, this->GetInstigatorController(), true);
+		
 }

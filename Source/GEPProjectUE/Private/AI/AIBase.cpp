@@ -21,7 +21,13 @@ AAIBase::AAIBase()
 void AAIBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	Health->OnHealthBelowZero.AddDynamic(this, &AAIBase::AIDied);
+}
+
+void AAIBase::AIDied()
+{
+	OnDeath.Broadcast();
 }
 
 // Called to bind functionality to input

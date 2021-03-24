@@ -7,10 +7,12 @@
 
 #include "ArrowProjectile.h"
 #include "WeaponBase.h"
+#include "Interfaces/GetWeaponBow.h"
+
 #include "WeaponBow.generated.h"
 
 UCLASS()
-class GEPPROJECTUE_API AWeaponBow : public AWeaponBase
+class GEPPROJECTUE_API AWeaponBow : public AWeaponBase, public IGetWeaponBow
 {
 	GENERATED_BODY()
 
@@ -31,6 +33,8 @@ public:
 
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}
 
+	virtual AWeaponBow* GetWeaponBow_Implementation() override;
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

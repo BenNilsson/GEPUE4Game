@@ -8,6 +8,8 @@
 #include "Interfaces/GetBaseAI.h"
 #include "AIBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
+
 UCLASS()
 class GEPPROJECTUE_API AAIBase : public ACharacter, public IGetBaseAI
 {
@@ -20,6 +22,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BluePrintReadOnly)
 	class UBehaviorTree* BehaviorTree;
 
+	FOnDeath OnDeath;
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -28,7 +32,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UHealthComponent* Health;
 
-	
+	UFUNCTION(BlueprintCallable)
+	virtual void AIDied();
 	
 public:	
 

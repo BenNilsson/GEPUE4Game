@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "HealthComponent.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHealthBelow0);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class GEPPROJECTUE_API UHealthComponent : public UActorComponent
@@ -16,6 +17,8 @@ public:
 	// Sets default values for this component's properties
 	UHealthComponent();
 
+	FHealthBelow0 OnHealthBelowZero;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -25,7 +28,7 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	float Health;
-
+	
 	UFUNCTION(BlueprintCallable)
 	virtual void TakeDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 };

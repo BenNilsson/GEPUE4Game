@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "Player/PlayerControllerCPP.h"
 #include "Anim/UAnimInstancePlayer.h"
 #include "Camera/CameraComponent.h"
@@ -11,9 +10,11 @@
 #include "Components/HealthComponent.h"
 #include "WeaponCombatTypeEnum.h"
 #include "Interfaces/Fireable.h"
+#include "Interfaces/GetWeaponBow.h"
 #include "Interfaces/Weaponable.h"
 #include "Inventory/ArrowItem.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "Weaponry/WeaponBow.h"
 
 // Sets default values
 APlayerControllerCPP::APlayerControllerCPP()
@@ -197,12 +198,26 @@ void APlayerControllerCPP::WeaponFireTriggered()
 				SetState(Melee);
 				break;
 			case EWeapon_Combat_Type::Ranged:
-				ArrowItem = InventoryComponent->GetArrow();
+			{
+				if (!ArrowItem || !InventoryComponent->ContainsItem(ArrowItem))
+					ArrowItem = InventoryComponent->GetArrow();
+					
 				if (!ArrowItem)
 					return;
-			
+
+				// Get Bow & Change Arrow Type
+				if (!WeaponChildActor->GetClass()->ImplementsInterface(UGetWeaponBow::StaticClass()))
+					return;
+					
+				AWeaponBow* Bow = IGetWeaponBow::Execute_GetWeaponBow(WeaponChildActor);
+
+				if (!Bow)
+					return;
+
+				Bow->ArrowProjectile = ArrowItem->ArrowProjectile;
 				SetState(Ranged);
 				break;
+			}
 			case EWeapon_Combat_Type::None:
 				SetState(Passive);
 				break;
@@ -231,12 +246,14 @@ void APlayerControllerCPP::WeaponFireReleased()
 	    case Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
+
+				if (!ArrowItem)
+	    			ArrowItem = InventoryComponent->GetArrow();
 		
-	    		ArrowItem = InventoryComponent->GetArrow();
 				if (!ArrowItem)
 					return;
 
-				InventoryComponent->RemoveItem(ArrowItem);		
+				InventoryComponent->RemoveItem(ArrowItem);
 			break;
 		default:
 			break;
