@@ -3,7 +3,6 @@
 
 #include "GameMode/ActorSpawner.h"
 
-
 #include "AI/AIBase.h"
 #include "Interfaces/GetBaseAI.h"
 #include "Kismet/GameplayStatics.h"
@@ -24,43 +23,29 @@ AActorSpawner::AActorSpawner()
 void AActorSpawner::SpawnActorInWorld()
 {
 	if (ActorToSpawn == nullptr)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, TEXT("Actor To Spawn Not Set"));
 		return;
-	}
 	
 	UWorld* const World = GetWorld();
 	if (!World)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, TEXT("World Not Found"));
 		return;
-	}
 	
 	FVector SpawnLoc = GetActorLocation();
-	FRotator SpawnRot = GetActorRotation();
+	const FRotator SpawnRot = GetActorRotation();
 
 #pragma region - NAVMESH POINT
 	// Get point on navmesh
 	// Origin - Random player's location
 	FVector PlayerLocation = FVector::ZeroVector;
-	
-	int PlayerIndex = FMath::RandRange(0.0f, static_cast<float>(PlayersToSpawnActorsNearby.Num()));
-	int PlayerCount = PlayersToSpawnActorsNearby.Num();
+
+	const int PlayerIndex = FMath::RandRange(0.0f, static_cast<float>(PlayersToSpawnActorsNearby.Num()));
+	const int PlayerCount = PlayersToSpawnActorsNearby.Num();
 	if (PlayerCount > PlayerIndex)
 	{
 		APlayerController* PlayerController = PlayersToSpawnActorsNearby[PlayerIndex];
 		if (!PlayerController)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, TEXT("Player Controller Not Found"));
-			return;
-		}
-
-		
-		APawn* Pawn = PlayerController->GetPawn();
-		if (!Pawn)
 			return;
 
-		PlayerLocation = Pawn->GetActorLocation();
+		PlayerLocation = PlayerController->GetPawn()->GetActorLocation();
 
 		if (PlayerLocation == FVector::ZeroVector)
 			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("oof"));

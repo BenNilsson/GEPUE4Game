@@ -38,9 +38,7 @@ void APlayerControllerGEP::Initialize_Implementation()
 	APawn* SpawnedPawn = World->SpawnActor<APawn>(PawnToPossess, SpawnLoc, SpawnRot, ActorSpawnParameters);
 
 	if (SpawnedPawn->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
-	{
 		IInitializeable::Execute_Initialize(SpawnedPawn);
-	}
 	
 	Possess(SpawnedPawn);
 }
@@ -52,9 +50,11 @@ void APlayerControllerGEP::SetupInputComponent()
 	// Bind Mapping Axis' to functions defined
 	InputComponent->BindAxis("MoveForward", this, &APlayerControllerGEP::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &APlayerControllerGEP::MoveRight);
+	
 	// -- Mouse
 	InputComponent->BindAxis("LookUp", this, &APlayerControllerGEP::LookUp);
 	InputComponent->BindAxis("Turn", this, &APlayerControllerGEP::Turn);
+	
 	// -- Controller
 	InputComponent->BindAxis("LookUpRate", this, &APlayerControllerGEP::LookUpAtRate); 
 	InputComponent->BindAxis("TurnRate", this, &APlayerControllerGEP::TurnAtRate);

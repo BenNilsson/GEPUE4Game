@@ -6,46 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/Deer/BP_DeerAI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/Deer/BP_DeerAI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Blendspaces/OwlCrouch1D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Blendspaces/OwlMovement1D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowDraw.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowIdle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowRecoil.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_Bow_Anim_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/OwlGuy_Jump.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_CrouchIdle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_CrouchWalk.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Falling.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Idle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Run.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_StandToCrouch.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Walk.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/BP_Player.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/BP_PlayerControllerGEP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/OwlGray.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_PhysicsAsset.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Mesh.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/PlayerAnimBP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/Widget_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/Widget_Inventory.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/Widget_InventoryItem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/Widget_InventoryItem.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/Arrow_stick.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/Arrow_stick.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -411,7 +377,7 @@
       <workItem from="1616682581809" duration="4067000" />
       <workItem from="1616724606450" duration="1354000" />
       <workItem from="1616755219673" duration="970000" />
-      <workItem from="1617110557784" duration="13946000" />
+      <workItem from="1617110557784" duration="15398000" />
     </task>
     <servers />
   </component>
