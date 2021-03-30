@@ -43540,6 +43540,10 @@
             <e p="Components" t="Include">
               <e p="HealthComponent.cpp" t="Include" />
             </e>
+            <e p="GameMode" t="Include">
+              <e p="ActorSpawner.cpp" t="Include" />
+              <e p="GameModeDeerHunting.cpp" t="Include" />
+            </e>
             <e p="HUD" t="Include">
               <e p="GEPProjectUEHUD.cpp" t="Include" />
               <e p="MainMenuHUD.cpp" t="Include" />
@@ -43549,7 +43553,9 @@
               <e p="GetArrowItem.cpp" t="Include" />
               <e p="GetInventory.cpp" t="Include" />
               <e p="GetPlayerCharacter.cpp" t="Include" />
+              <e p="GetPlayerController.cpp" t="Include" />
               <e p="GetWeaponBow.cpp" t="Include" />
+              <e p="Initializeable.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
             <e p="Inventory" t="Include">
@@ -43587,6 +43593,10 @@
             <e p="Components" t="Include">
               <e p="HealthComponent.h" t="Include" />
             </e>
+            <e p="GameMode" t="Include">
+              <e p="ActorSpawner.h" t="Include" />
+              <e p="GameModeDeerHunting.h" t="Include" />
+            </e>
             <e p="HUD" t="Include">
               <e p="GEPProjectUEHUD.h" t="Include" />
               <e p="MainMenuHUD.h" t="Include" />
@@ -43597,7 +43607,9 @@
               <e p="GetBaseAI.h" t="Include" />
               <e p="GetInventory.h" t="Include" />
               <e p="GetPlayerCharacter.h" t="Include" />
+              <e p="GetPlayerController.h" t="Include" />
               <e p="GetWeaponBow.h" t="Include" />
+              <e p="Initializeable.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
             <e p="Inventory" t="Include">

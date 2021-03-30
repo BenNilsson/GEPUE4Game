@@ -4,13 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Interfaces/GetPlayerController.h"
+
 #include "PlayerControllerGEP.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class GEPPROJECTUE_API APlayerControllerGEP : public APlayerController
+class GEPPROJECTUE_API APlayerControllerGEP : public APlayerController, public IGetPlayerController, public IInitializeable
 {
 	GENERATED_BODY()
 
@@ -43,4 +45,10 @@ private:
 public:
 	
 	APlayerControllerGEP();
+
+	UFUNCTION(BlueprintCallable)
+	virtual APlayerControllerGEP* GetPlayerControllerGEP_Implementation() override;
+
+	UFUNCTION(BlueprintCallable)
+	virtual void Initialize_Implementation() override;
 };

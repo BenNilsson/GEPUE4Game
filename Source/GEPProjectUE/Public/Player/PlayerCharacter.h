@@ -7,6 +7,9 @@
 #include "GameFramework/Character.h"
 #include "Interfaces/GetInventory.h"
 #include "Interfaces/GetPlayerCharacter.h"
+#include "Interfaces/GetPlayerController.h"
+
+
 #include "PlayerCharacter.generated.h"
 
 class UItem;
@@ -21,7 +24,8 @@ enum EPlayer_Combat_State
 
 
 UCLASS()
-class GEPPROJECTUE_API APlayerCharacter : public ACharacter, public IGetPlayerCharacter, public IGetInventory
+class GEPPROJECTUE_API APlayerCharacter : public ACharacter, public IGetPlayerCharacter,
+public IGetInventory , public IGetPlayerController, public IInitializeable
 {
 	GENERATED_BODY()
 
@@ -60,7 +64,7 @@ class GEPPROJECTUE_API APlayerCharacter : public ACharacter, public IGetPlayerCh
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
-
+	
 	/* Use Item */
 	UFUNCTION(BlueprintCallable)
 	void UseItem(UItem* Item);
@@ -95,8 +99,15 @@ public:
 	virtual APlayerCharacter* GetPlayerCharacter_Implementation() override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    class APlayerControllerGEP* GetPlayerControllerGEP();
+	virtual class APlayerControllerGEP* GetPlayerControllerGEP_Implementation() override;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UInventoryComponent* GetInventory();
 	virtual UInventoryComponent* GetInventory_Implementation() override;
+
+	UFUNCTION(BlueprintCallable)
+	virtual void Initialize_Implementation() override;
 	
 	void MoveForward(float Value);
 	void MoveRight(float Value);
@@ -116,8 +127,6 @@ public:
 	void Jump();
 	void CrouchTriggered();
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, Category="Controller Settings")
 	float TurnRate;

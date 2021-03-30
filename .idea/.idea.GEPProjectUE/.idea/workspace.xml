@@ -9,21 +9,43 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/AI/Deer/BP_DeerAI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/Deer/BP_DeerAI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Blendspaces/OwlCrouch1D.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Blendspaces/OwlMovement1D.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowDraw.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowIdle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_BowRecoil.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Bow/Owl_Bow_Anim_Montage.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/OwlGuy_Jump.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_CrouchIdle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_CrouchWalk.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Falling.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Idle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Run.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_StandToCrouch.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Animations/Owl_Walk.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/BP_Player.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/BP_PlayerControllerGEP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/OwlGray.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Jump_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/Owl_Mesh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/PlayerAnimBP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PlayerController/TEST.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Anim/UAnimInstancePlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Anim/UAnimInstancePlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetPlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/Widget_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/Widget_Inventory.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/Widget_InventoryItem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/Widget_InventoryItem.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/Item.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerCPP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Anim/UAnimInstancePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Anim/UAnimInstancePlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetPlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/ArrowItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/ArrowItem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/FoodItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/FoodItem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/Item.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerCPP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,28 +62,14 @@
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/UMG/Public/Components/CanvasPanel.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/Engine/Private/GameplayStatics.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/CoreUObject/Public/Templates/SubclassOf.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/Engine/Classes/Engine/EngineBaseTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/Engine/Classes/Components/BoxComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE_4.25/Engine/Source/Runtime/UMG/Public/Components/Image.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/Item.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/GetBaseAI.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/GetBaseAI.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetBaseAI.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetBaseAI.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/WeaponBase.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Anim/UAnimInstancePlayer.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Anim/UAnimInstancePlayer.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/HUD/GEPProjectUEHUD.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/HUD/MainMenuHUD.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/Fireable.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetInventory.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetPlayerController.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/Weaponable.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/Item.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/StaticItem.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" />
@@ -78,25 +86,40 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/ArrowProjectile.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetWeaponBow.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetWeaponBow.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/WeaponBow.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetArrowItem.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetArrowItem.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/ArrowItem.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetPlayerCharacter.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerCPP.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerCPP.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetPlayerController.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameModeDeerHunting.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/ArrowItem.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/FoodItem.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Inventory/InventoryComponent.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/Initializeable.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/Initializeable.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetPlayerController.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameModeDeerHunting.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameStateDeerHunting.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameStateDeerHunting.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/DeerSpawner.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oNuGU81sS98QbcJpScBJQqSrnE" />
@@ -382,7 +405,13 @@
       <workItem from="1616173480952" duration="50000" />
       <workItem from="1616422567416" duration="5370000" />
       <workItem from="1616519510537" duration="26919000" />
-      <workItem from="1616619604862" duration="661000" />
+      <workItem from="1616619604862" duration="1276000" />
+      <workItem from="1616623683049" duration="11389000" />
+      <workItem from="1616637849698" duration="135000" />
+      <workItem from="1616682581809" duration="4067000" />
+      <workItem from="1616724606450" duration="1354000" />
+      <workItem from="1616755219673" duration="970000" />
+      <workItem from="1617110557784" duration="13946000" />
     </task>
     <servers />
   </component>
@@ -405,6 +434,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

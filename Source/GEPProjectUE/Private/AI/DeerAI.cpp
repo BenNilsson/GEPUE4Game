@@ -23,5 +23,6 @@ void ADeerAI::BeginPlay()
 
 void ADeerAI::AIDied()
 {
+	OnDeath.Broadcast();
 	Destroy(false,false);
 }

@@ -14,6 +14,37 @@ APlayerControllerGEP::APlayerControllerGEP()
 	
 }
 
+APlayerControllerGEP* APlayerControllerGEP::GetPlayerControllerGEP_Implementation()
+{
+	return this;
+}
+
+void APlayerControllerGEP::Initialize_Implementation()
+{
+	if (GetPawn() != nullptr)
+		GetPawn()->Destroy();
+
+	UWorld* const World = GetWorld();
+	if (!World && !PawnToPossess)
+		return;
+
+	AActor* Start = UGameplayStatics::GetGameMode(World)->FindPlayerStart(this);
+	FVector SpawnLoc = Start != nullptr ? Start->GetActorLocation() : FVector::ZeroVector;
+	FRotator SpawnRot = Start != nullptr ? Start->GetActorRotation() : FRotator::ZeroRotator;
+
+	FActorSpawnParameters ActorSpawnParameters;
+	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+	APawn* SpawnedPawn = World->SpawnActor<APawn>(PawnToPossess, SpawnLoc, SpawnRot, ActorSpawnParameters);
+
+	if (SpawnedPawn->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+	{
+		IInitializeable::Execute_Initialize(SpawnedPawn);
+	}
+	
+	Possess(SpawnedPawn);
+}
+
 void APlayerControllerGEP::SetupInputComponent()
 {
 	Super::SetupInputComponent();
@@ -41,26 +72,7 @@ void APlayerControllerGEP::SetupInputComponent()
 
 void APlayerControllerGEP::BeginPlay()
 {
-	Super::BeginPlay();
 	
-	if (GetPawn() != nullptr)
-		GetPawn()->Destroy();
-
-	UWorld* const World = GetWorld();
-	if (!World && !PawnToPossess)
-		return;
-
-	AActor* Start = UGameplayStatics::GetGameMode(World)->FindPlayerStart(this);
-	FVector SpawnLoc = Start != nullptr ? Start->GetActorLocation() : FVector::ZeroVector;
-	FRotator SpawnRot = Start != nullptr ? Start->GetActorRotation() : FRotator::ZeroRotator;
-
-	FActorSpawnParameters ActorSpawnParameters;
-	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-	APawn* SpawnedPawn = World->SpawnActor<APawn>(PawnToPossess, SpawnLoc, SpawnRot, ActorSpawnParameters);
-	//if (SpawnedPawn->IsA(APlayerCharacter::StaticClass()))
-	
-	Possess(SpawnedPawn);
 }
 
 void APlayerControllerGEP::MoveForward(float Value)

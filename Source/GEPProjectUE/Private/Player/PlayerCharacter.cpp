@@ -83,22 +83,36 @@ APlayerCharacter* APlayerCharacter::GetPlayerCharacter_Implementation()
 	return this;
 }
 
+APlayerControllerGEP* APlayerCharacter::GetPlayerControllerGEP_Implementation()
+{
+	if (!Controller)
+		return nullptr;
+	
+	if (Controller->GetClass()->ImplementsInterface(UGetPlayerController::StaticClass()))
+	{
+		APlayerControllerGEP* PlayerController = IGetPlayerController::Execute_GetPlayerControllerGEP(Controller);
+		if (PlayerController)
+			return PlayerController;
+	}
+	
+	return nullptr;
+}
+
+
 UInventoryComponent* APlayerCharacter::GetInventory_Implementation()
 {
 	return InventoryComponent;
 }
 
-// Called when the game starts or when spawned
-void APlayerCharacter::BeginPlay()
+void APlayerCharacter::Initialize_Implementation()
 {
-	Super::BeginPlay();
-
 	// Set Anim Instance
 	AnimInstancePlayer = Cast<UAnimInstancePlayer>(GetMesh()->GetAnimInstance());
 
 	// Set walk speed
 	GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
 }
+
 
 void APlayerCharacter::MoveForward(float Value)
 {
@@ -182,12 +196,14 @@ void APlayerCharacter::WeaponFireTriggered()
 				break;
 			case EWeapon_Combat_Type::Ranged:
 			{
-				if (!ArrowItem || !InventoryComponent->ContainsItem(ArrowItem))
+				if (!ArrowItem)
+					ArrowItem = InventoryComponent->GetArrow();
+				else if (!InventoryComponent->ContainsItem(ArrowItem))
 					ArrowItem = InventoryComponent->GetArrow();
 					
 				if (!ArrowItem)
 					return;
-
+					
 				// Get Bow & Change Arrow Type
 				if (!WeaponChildActor->GetClass()->ImplementsInterface(UGetWeaponBow::StaticClass()))
 					return;
@@ -224,14 +240,20 @@ void APlayerCharacter::WeaponFireReleased()
 
 	AActor* WeaponChildActor = Weapon->GetChildActor();
 
+	bool test;
 	switch (EPlayerCombatState)
 	{
 	    case Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
 
+				test = InventoryComponent->ContainsItem(ArrowItem);
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, FString::Printf(TEXT("Bool: %s"), test == true ? TEXT("true") : TEXT("false")));
+
 				if (!ArrowItem)
-	    			ArrowItem = InventoryComponent->GetArrow();
+					ArrowItem = InventoryComponent->GetArrow();
+				else if (!InventoryComponent->ContainsItem(ArrowItem))
+					ArrowItem = InventoryComponent->GetArrow();
 		
 				if (!ArrowItem)
 					return;

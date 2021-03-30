@@ -14,9 +14,7 @@ UInventoryComponent::UInventoryComponent()
 // Called when the game starts
 void UInventoryComponent::BeginPlay()
 {
-	Super::BeginPlay();
 
-	// ...
 	for (auto& Item : DefaultItems)
 	{
 		const auto StackSize = Item->ItemCurrentStackSize;
@@ -25,6 +23,8 @@ void UInventoryComponent::BeginPlay()
 			AddItem(Item);
 		}
 	}
+	
+	Super::BeginPlay();
 }
 
 bool UInventoryComponent::AddItem(UItem* Item, int amount)
@@ -97,15 +97,20 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
 
 bool UInventoryComponent::ContainsItem(UItem* Item)
 {
+	bool HasItem = false;
 	if (!Item || Items.Num() < 0)
 		return false;
 
-	Items.FindByPredicate([&](UItem* InItem)
+	
+	HasItem = (Items.FindByPredicate([&](UItem* InItem)
 	{
-		return InItem->ItemID == Item->ItemID;
-	});
+		if (InItem->ItemID == Item->ItemID)
+			return true;
+		
+		return false;
+	}) != nullptr);
 
-	return false;
+	return HasItem;
 }
 
 UArrowItem* UInventoryComponent::GetArrow()

@@ -6,6 +6,5 @@
 
 void UFoodItem::Use(APlayerCharacter* Character)
 {
-	if (Character)
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, TEXT("Food Item Function Not Implemented"));
+	
 }
