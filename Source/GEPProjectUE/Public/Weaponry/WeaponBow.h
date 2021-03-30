@@ -11,15 +11,10 @@
 
 #include "WeaponBow.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType, Blueprintable)
 class GEPPROJECTUE_API AWeaponBow : public AWeaponBase, public IGetWeaponBow
 {
 	GENERATED_BODY()
-
-	
-
-	UPROPERTY(VisibleDefaultsOnly)
-	class UArrowComponent* ArrowComponent;
 	
 public:
 	// Sets default values for this actor's properties
@@ -27,9 +22,13 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AArrowProjectile> ArrowProjectile;
-	
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
+	class UArrowComponent* ArrowComponent;
+
 	virtual bool Fire_Implementation() override;
 	virtual bool FireReleased_Implementation() override;
+	virtual bool FireHeld_Implementation() override;
 
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}
 

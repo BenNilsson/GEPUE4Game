@@ -6,14 +6,15 @@
 #include "GameFramework/Actor.h"
 #include "Interfaces/Fireable.h"
 #include "Interfaces/Weaponable.h"
-
-
 #include "WeaponBase.generated.h"
-
 
 enum class EWeapon_Combat_Type;
 
-UCLASS()
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponFireEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponFireHeldEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponFireReleasedEvent);
+
+UCLASS(BlueprintType, Blueprintable)
 class GEPPROJECTUE_API AWeaponBase : public AActor, public IFireable, public IWeaponable
 {
 	GENERATED_BODY()
@@ -43,13 +44,25 @@ protected:
 	TEnumAsByte<EWeapon_Combat_Type> EWeaponType;
 	
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
 	bool Fire();
 	virtual bool Fire_Implementation() override;
 	
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
 	bool FireReleased();
 	virtual bool FireReleased_Implementation() override;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
+    bool FireHeld();
+	virtual bool FireHeld_Implementation() override;
+
+	UPROPERTY(BlueprintAssignable, Category="Weapon Events")
+	FWeaponFireEvent OnWeaponFiredEvent;
+	UPROPERTY(BlueprintAssignable, Category="Weapon Events")
+	FWeaponFireHeldEvent OnWeaponFireHeldEvent;
+	UPROPERTY(BlueprintAssignable, Category="Weapon Events")
+	FWeaponFireReleasedEvent OnWeaponFiredReleasedEvent;
+	
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	EWeapon_Combat_Type GetWeaponType();

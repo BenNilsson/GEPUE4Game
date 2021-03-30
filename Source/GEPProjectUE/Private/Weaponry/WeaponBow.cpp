@@ -6,7 +6,6 @@
 #include "Components/ArrowComponent.h"
 #include "WeaponCombatTypeEnum.h"
 #include "Kismet/GameplayStatics.h"
-#include "Kismet/KismetMathLibrary.h"
 
 
 // Sets default values
@@ -18,15 +17,23 @@ AWeaponBow::AWeaponBow()
 	EWeaponType = EWeapon_Combat_Type::Ranged;
 }
 
+bool AWeaponBow::FireHeld_Implementation()
+{
+	OnWeaponFireHeldEvent.Broadcast();
+	return true;
+}
+
 // Fire first pressed
 bool AWeaponBow::Fire_Implementation()
 {
+	OnWeaponFiredEvent.Broadcast();
 	return true;
 }
 
 // Fire released
 bool AWeaponBow::FireReleased_Implementation()
 {
+	/*
 	UWorld* const World = GetWorld();
 
 	if (!World && ArrowProjectile == nullptr) return false;
@@ -51,6 +58,9 @@ bool AWeaponBow::FireReleased_Implementation()
 		SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLoc, Hit.ImpactPoint);
 	
 	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLoc, SpawnRotation, ActorSpawnParameters);
+	return true;
+	*/
+	OnWeaponFiredReleasedEvent.Broadcast();
 	return true;
 }
 

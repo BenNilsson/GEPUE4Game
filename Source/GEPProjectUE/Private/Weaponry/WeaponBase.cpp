@@ -23,11 +23,19 @@ void AWeaponBase::BeginPlay()
 
 bool AWeaponBase::Fire_Implementation()
 {
+	OnWeaponFiredEvent.Broadcast();
 	return true;
 }
 
 bool AWeaponBase::FireReleased_Implementation()
 {
+	OnWeaponFiredReleasedEvent.Broadcast();
+	return true;
+}
+
+bool AWeaponBase::FireHeld_Implementation()
+{
+	OnWeaponFireHeldEvent.Broadcast();
 	return true;
 }
 

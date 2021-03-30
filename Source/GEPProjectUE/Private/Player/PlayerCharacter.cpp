@@ -111,6 +111,8 @@ void APlayerCharacter::Initialize_Implementation()
 
 	// Set walk speed
 	GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
+
+	IsSprinting = false;
 }
 
 
@@ -240,15 +242,11 @@ void APlayerCharacter::WeaponFireReleased()
 
 	AActor* WeaponChildActor = Weapon->GetChildActor();
 
-	bool test;
 	switch (EPlayerCombatState)
 	{
 	    case Ranged:
 	    	if (WeaponAnimMontage)
 	    		StopAnimMontage(WeaponAnimMontage);
-
-				test = InventoryComponent->ContainsItem(ArrowItem);
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, FString::Printf(TEXT("Bool: %s"), test == true ? TEXT("true") : TEXT("false")));
 
 				if (!ArrowItem)
 					ArrowItem = InventoryComponent->GetArrow();
