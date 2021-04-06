@@ -42,6 +42,13 @@ AArrowProjectile::AArrowProjectile()
 	HasHit = false;
 }
 
+void AArrowProjectile::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	ProjectileMovementComponent->Velocity = Velocity;
+}
+
 void AArrowProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
                              FVector NormalImpulse, const FHitResult& Hit)
 {

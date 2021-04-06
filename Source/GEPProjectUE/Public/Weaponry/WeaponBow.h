@@ -25,7 +25,7 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
 	class UArrowComponent* ArrowComponent;
-
+	
 	virtual bool Fire_Implementation() override;
 	virtual bool FireReleased_Implementation() override;
 	virtual bool FireHeld_Implementation() override;

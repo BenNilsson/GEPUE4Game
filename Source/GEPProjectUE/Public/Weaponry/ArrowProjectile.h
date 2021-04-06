@@ -19,6 +19,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileMovementComponent;
 
+	UPROPERTY(BlueprintReadWrite, meta = (ExposeOnSpawn="true"))
+	FVector Velocity;
+	
 	bool HasHit;
 
 	/* AIStumuliSourceComponent */
@@ -28,6 +31,8 @@ protected:
 public:
 	// Sets default values for this actor's properties
 	AArrowProjectile();
+
+	virtual void BeginPlay() override;
 
 	UFUNCTION()
 	virtual void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
