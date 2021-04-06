@@ -7,12 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/ArrowProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/ArrowProjectile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/ArrowProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/ArrowProjectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/WeaponBow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/WeaponBow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/MainMenu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/MainMenu.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/MainMenuMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/MainMenuMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/MainMenuUIWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/MainMenuUIWidget.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,6 +381,7 @@
       <workItem from="1617145164498" duration="2714000" />
       <workItem from="1617656921861" duration="600000" />
       <workItem from="1617720858830" duration="6362000" />
+      <workItem from="1617732541770" duration="613000" />
     </task>
     <servers />
   </component>
