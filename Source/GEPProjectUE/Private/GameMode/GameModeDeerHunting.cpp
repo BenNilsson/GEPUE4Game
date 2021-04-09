@@ -65,11 +65,15 @@ void AGameModeDeerHunting::Logout(AController* Exiting)
 
 void AGameModeDeerHunting::BeginPlay()
 {
-	const UWorld* World = GetWorld();
+	//Super::BeginPlay();
 	
+	const UWorld* World = GetWorld();
+
+	/*
 	UGameplayStatics::RemovePlayer(UGameplayStatics::GetPlayerController(World, 0), true);
 	UGameplayStatics::CreatePlayer(World);
-
+	*/
+	
 	CreateSpawner();
 	DeersKilled = 0;
 
@@ -96,15 +100,19 @@ void AGameModeDeerHunting::OnActorKilled()
 	}
 }
 
-void AGameModeDeerHunting::StartButtonClicked(bool Active)
+void AGameModeDeerHunting::StartButtonClicked(const bool Active)
 {
 	if (!ActorSpawner)
 		return;
 
 	if (Active)
+	{
 		StartGame();
+	}
 	else
+	{
 		EndGame(false);
+	}
 }
 
 void AGameModeDeerHunting::StartGame()

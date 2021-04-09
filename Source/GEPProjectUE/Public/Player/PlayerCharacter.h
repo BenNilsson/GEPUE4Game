@@ -22,7 +22,6 @@ enum EPlayer_Combat_State
 	Ranged		UMETA(DisplayName = "Ranged"),
 };
 
-
 UCLASS()
 class GEPPROJECTUE_API APlayerCharacter : public ACharacter, public IGetPlayerCharacter,
 public IGetInventory , public IGetPlayerController, public IInitializeable
@@ -106,7 +105,8 @@ public:
     UInventoryComponent* GetInventory();
 	virtual UInventoryComponent* GetInventory_Implementation() override;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void OnInitialized(); // BP
 	virtual void Initialize_Implementation() override;
 	
 	void MoveForward(float Value);
@@ -125,8 +125,11 @@ public:
 	void WeaponFireReleased();
 
 	void Sprint();
-	void Jump();
+	virtual void Jump() override;
 	void CrouchTriggered();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void OptionsMenuButtonTriggered();
 
 	bool bIsMouseHeld;
 protected:

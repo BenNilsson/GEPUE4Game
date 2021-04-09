@@ -45,6 +45,9 @@ private:
 	void Jump();
 	void CrouchTriggered();
 
+    void OptionsMenuButtonTriggered();
+	
+
 	void CheckForInteraction();
 	FTimerHandle InteractionTimer;
 	void Interact();
@@ -53,9 +56,10 @@ public:
 	
 	APlayerControllerGEP();
 
-	UFUNCTION(BlueprintCallable)
 	virtual APlayerControllerGEP* GetPlayerControllerGEP_Implementation() override;
 
-	UFUNCTION(BlueprintCallable)
 	virtual void Initialize_Implementation() override;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnOptionsMenuPressed();
 };

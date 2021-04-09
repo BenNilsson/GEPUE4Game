@@ -48,9 +48,12 @@ private:
 	UFUNCTION()
 	void OnActorKilled();
 
+	UFUNCTION()
 	void StartButtonClicked(bool Active);
+	UFUNCTION()
 	void StartGame();
+	UFUNCTION()
 	void EndGame(bool Victory);
-	
+	UFUNCTION()
 	void CreateSpawner();
 };

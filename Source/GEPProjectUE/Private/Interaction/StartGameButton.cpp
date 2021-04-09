@@ -15,12 +15,21 @@ void AStartGameButton::Initialize_Implementation()
 	bIsActive = false;
 }
 
+void AStartGameButton::BeginPlay()
+{
+	bIsActive = false;
+}  
+
 bool AStartGameButton::Interact_Implementation()
 {
 	bIsActive = !bIsActive;
 	
 	OnButtonPressed.Broadcast(bIsActive);
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Magenta, FString::Printf(TEXT("Start Game Button Clicked")));
+
+	/*
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Magenta, FString::Printf(TEXT("[Start Button] Active: %s"), bIsActive ? TEXT("true") : TEXT("false")));
+	*/
 	return true;
 }
 

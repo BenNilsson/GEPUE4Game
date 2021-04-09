@@ -26,7 +26,8 @@ AWeaponBow::AWeaponBow()
 bool AWeaponBow::FireHeld_Implementation()
 {
 	UWorld* const World = GetWorld();
-	if (!World && ArrowProjectile == nullptr) return false;
+	if (!World && ArrowProjectile == nullptr)
+		return false;
 
 	// Line Trace Arguments
 	FHitResult Hit;
@@ -34,13 +35,6 @@ bool AWeaponBow::FireHeld_Implementation()
 	const FVector Forward = UGameplayStatics::GetPlayerController(World, 0)->PlayerCameraManager->GetActorForwardVector();
 	const FVector Start = UGameplayStatics::GetPlayerController(World, 0)->PlayerCameraManager->GetCameraLocation();
 	FVector End = Start + (Forward * 15000.0f);
-
-	/*
-	const FName TraceTag("TraceTag");
-	World->DebugDrawTraceTag = TraceTag;
-	FCollisionQueryParams CollisionsParams;
-	CollisionsParams.TraceTag = TraceTag;
-	*/
 	
 	// Gravity
 	FVector Distance = (Forward * 15000.0f) / GravitySpeedFactor;
@@ -72,7 +66,7 @@ bool AWeaponBow::FireHeld_Implementation()
 	Params.LaunchVelocity = LaunchVelocity;
 	Params.ProjectileRadius = 2.0f;
 	Params.MaxSimTime = 2.0f;
-	Params.bTraceWithCollision = TraceHit;
+	Params.bTraceWithCollision = true;
 	Params.bTraceComplex = true;
 	Params.DrawDebugType = EDrawDebugTrace::None;
 	Params.DrawDebugTime = 1.0f;
@@ -124,10 +118,11 @@ bool AWeaponBow::FireReleased_Implementation()
 {
 	UWorld* const World = GetWorld();
 
-	if (!World && ArrowProjectile == nullptr) return false;
+	if (!World && ArrowProjectile == nullptr)
+		return false;
 	
 	FActorSpawnParameters ActorSpawnParameters;
-	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 	AActor* ParentActor = GetParentActor();
 	ActorSpawnParameters.Owner = ParentActor;
 	

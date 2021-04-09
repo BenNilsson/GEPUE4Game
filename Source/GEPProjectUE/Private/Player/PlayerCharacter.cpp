@@ -104,15 +104,25 @@ UInventoryComponent* APlayerCharacter::GetInventory_Implementation()
 	return InventoryComponent;
 }
 
+void APlayerCharacter::OnInitialized_Implementation()
+{
+}
+
 void APlayerCharacter::Initialize_Implementation()
 {
 	// Set Anim Instance
-	AnimInstancePlayer = Cast<UAnimInstancePlayer>(GetMesh()->GetAnimInstance());
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance)
+		AnimInstancePlayer = Cast<UAnimInstancePlayer>(AnimInstance);
 
-	// Set walk speed
-	GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
+	if (AnimInstancePlayer)
+	{
+		// Set walk speed
+		GetCharacterMovement()->MaxWalkSpeed = BaseMovementSpeed;
 
-	IsSprinting = false;
+		IsSprinting = false;
+	}
+	OnInitialized();
 }
 
 
@@ -308,5 +318,11 @@ void APlayerCharacter::CrouchTriggered()
 	}
 	
 	IsCrouching = !IsCrouching;
-	AnimInstancePlayer->IsCrouching = IsCrouching;
+	if (AnimInstancePlayer)
+		AnimInstancePlayer->IsCrouching = IsCrouching;
+}
+
+void APlayerCharacter::OptionsMenuButtonTriggered_Implementation()
+{
+	
 }

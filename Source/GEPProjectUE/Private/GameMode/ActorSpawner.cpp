@@ -14,6 +14,7 @@ AActorSpawner::AActorSpawner()
 	PrimaryActorTick.bCanEverTick = false;
 
 	RespawnTime = 10.0f;
+	ActorsToSpawnAtStart = 5;
 	SpawnRadiusMin = 500.0f;
 	SpawnRadiusMax = 1000.0f;
 	MaxActorsSpawned = 20;
@@ -108,17 +109,21 @@ void AActorSpawner::EnableSpawner()
 		SpawnActorInWorld();
 	}
 
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Enabled");
+	
 	GetWorldTimerManager().SetTimer(RespawnTimer, this, &AActorSpawner::SpawnActorInWorld, RespawnTime, true);
 }
 
 void AActorSpawner::DisableSpawner()
 {
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Disabled");
+	
 	GetWorldTimerManager().ClearTimer(RespawnTimer);
 }
 
 void AActorSpawner::Initialize_Implementation()
 {
 	CurrentActorsInLevel = 0;
-	
-	
 }

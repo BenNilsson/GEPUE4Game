@@ -26,24 +26,26 @@ void APlayerControllerGEP::Initialize_Implementation()
 		GetPawn()->Destroy();
 
 	UWorld* const World = GetWorld();
-	if (!World && !PawnToPossess)
-		return;
+	if (World && PawnToPossess)
+	{
+		AActor* Start = UGameplayStatics::GetGameMode(World)->FindPlayerStart(this);
+		FVector SpawnLoc = Start != nullptr ? Start->GetActorLocation() : FVector::ZeroVector;
+		FRotator SpawnRot = Start != nullptr ? Start->GetActorRotation() : FRotator::ZeroRotator;
 
-	AActor* Start = UGameplayStatics::GetGameMode(World)->FindPlayerStart(this);
-	FVector SpawnLoc = Start != nullptr ? Start->GetActorLocation() : FVector::ZeroVector;
-	FRotator SpawnRot = Start != nullptr ? Start->GetActorRotation() : FRotator::ZeroRotator;
+		FActorSpawnParameters ActorSpawnParameters;
+		ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-	FActorSpawnParameters ActorSpawnParameters;
-	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+		APawn* SpawnedPawn = World->SpawnActor<APawn>(PawnToPossess, SpawnLoc, SpawnRot, ActorSpawnParameters);
 
-	APawn* SpawnedPawn = World->SpawnActor<APawn>(PawnToPossess, SpawnLoc, SpawnRot, ActorSpawnParameters);
+		if (SpawnedPawn->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+		{
+			IInitializeable::Execute_Initialize(SpawnedPawn);
+		}
 
-	if (SpawnedPawn->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
-		IInitializeable::Execute_Initialize(SpawnedPawn);
-
-	GetWorldTimerManager().SetTimer(InteractionTimer, this, &APlayerControllerGEP::CheckForInteraction, 0.1f, true);
+		GetWorldTimerManager().SetTimer(InteractionTimer, this, &APlayerControllerGEP::CheckForInteraction, 0.1f, true);
 	
-	Possess(SpawnedPawn);
+		Possess(SpawnedPawn);
+	}
 }
 
 void APlayerControllerGEP::SetupInputComponent()
@@ -74,6 +76,9 @@ void APlayerControllerGEP::SetupInputComponent()
 
 	// Interact
 	InputComponent->BindAction("Interact", IE_Pressed, this, &APlayerControllerGEP::Interact);
+
+	// Options
+	InputComponent->BindAction("OptionsMenu", IE_Pressed, this, &APlayerControllerGEP::OptionsMenuButtonTriggered);
 }
 
 void APlayerControllerGEP::MoveForward(float Value)
@@ -199,6 +204,23 @@ void APlayerControllerGEP::CrouchTriggered()
 	if (PlayerCharacter != nullptr)
 		PlayerCharacter->CrouchTriggered();
 }
+
+void APlayerControllerGEP::OnOptionsMenuPressed_Implementation()
+{
+}
+
+void APlayerControllerGEP::OptionsMenuButtonTriggered()
+{
+	if (!GetPawn()->GetClass()->ImplementsInterface(UGetPlayerCharacter::StaticClass()))
+		return;
+					
+	APlayerCharacter* PlayerCharacter = IGetPlayerCharacter::Execute_GetPlayerCharacter(GetPawn());
+	if (!PlayerCharacter)
+		PlayerCharacter->OptionsMenuButtonTriggered();
+
+	OnOptionsMenuPressed();
+}
+
 
 void APlayerControllerGEP::CheckForInteraction()
 {

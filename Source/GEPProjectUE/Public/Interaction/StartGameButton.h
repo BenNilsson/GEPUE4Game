@@ -22,11 +22,16 @@ public:
 
 	FOnButtonPressed OnButtonPressed;
 
+	UPROPERTY()
+	bool bIsActive;
+	
 	virtual void Initialize_Implementation() override;
 
 protected:
 
-	bool bIsActive;
+	virtual void BeginPlay() override;
+	
+	
 
 public:	
 	virtual bool Interact_Implementation() override;
