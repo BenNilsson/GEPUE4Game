@@ -23,7 +23,7 @@ void AArrowExplosionProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor*
 	ActorsToIgnore.Add(GetOwner());
 	
 	// Deal Damage
-	UGameplayStatics::ApplyRadialDamage(GetWorld(), 50, GetActorLocation(), DamageRadius, TSubclassOf<UDamageType>(UDamageType::StaticClass()),
+	UGameplayStatics::ApplyRadialDamage(GetWorld(), 100, GetActorLocation(), DamageRadius, TSubclassOf<UDamageType>(UDamageType::StaticClass()),
     ActorsToIgnore, this, this->GetInstigatorController(), true);
 		
 }

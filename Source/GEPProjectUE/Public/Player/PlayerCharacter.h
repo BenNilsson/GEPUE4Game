@@ -121,11 +121,14 @@ public:
 	void SetState(EPlayer_Combat_State State);
 	
 	void WeaponFireTriggered();
+	void WeaponFireHeld();
 	void WeaponFireReleased();
 
 	void Sprint();
 	void Jump();
 	void CrouchTriggered();
+
+	bool bIsMouseHeld;
 protected:
 
 	UPROPERTY(EditAnywhere, Category="Controller Settings")

@@ -13,16 +13,19 @@ AActorSpawner::AActorSpawner()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
-	RespawnTime = 20.0f;
+	RespawnTime = 10.0f;
 	SpawnRadiusMin = 500.0f;
 	SpawnRadiusMax = 1000.0f;
-	MaxActorsSpawned = 5;
-	CurrentActorsSpawned = 0;
+	MaxActorsSpawned = 20;
+	CurrentActorsInLevel = 0;
 }
 
 void AActorSpawner::SpawnActorInWorld()
 {
 	if (ActorToSpawn == nullptr)
+		return;
+
+	if (CurrentActorsInLevel >= MaxActorsSpawned)
 		return;
 	
 	UWorld* const World = GetWorld();
@@ -78,7 +81,8 @@ void AActorSpawner::SpawnActorInWorld()
 	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
 	APawn* SpawnedPawn = World->SpawnActor<APawn>(ActorToSpawn, SpawnLoc, SpawnRot, ActorSpawnParameters);
-
+	CurrentActorsInLevel++;
+	
 	if (SpawnedPawn->GetClass()->ImplementsInterface(UGetBaseAI::StaticClass()))
 	{
 		AAIBase* AIBase = IGetBaseAI::Execute_GetAIBase(SpawnedPawn);
@@ -93,17 +97,28 @@ void AActorSpawner::SpawnActorInWorld()
 void AActorSpawner::ActorDied()
 {
 	// Spawn new enemy, broadcast death
-
-	FTimerHandle RespawnTimer;
-	GetWorldTimerManager().SetTimer(RespawnTimer, this, &AActorSpawner::SpawnActorInWorld, RespawnTime);
-	
+	CurrentActorsInLevel--;
 	OnActorDeath.Broadcast();
+}
+
+void AActorSpawner::EnableSpawner()
+{
+	for (int i = 0; i < ActorsToSpawnAtStart; i++)
+	{
+		SpawnActorInWorld();
+	}
+
+	GetWorldTimerManager().SetTimer(RespawnTimer, this, &AActorSpawner::SpawnActorInWorld, RespawnTime, true);
+}
+
+void AActorSpawner::DisableSpawner()
+{
+	GetWorldTimerManager().ClearTimer(RespawnTimer);
 }
 
 void AActorSpawner::Initialize_Implementation()
 {
-	for (int i = 0; i < MaxActorsSpawned; i++)
-	{
-		SpawnActorInWorld();
-	}
+	CurrentActorsInLevel = 0;
+	
+	
 }

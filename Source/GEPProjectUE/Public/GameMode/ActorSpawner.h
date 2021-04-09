@@ -25,11 +25,13 @@ class GEPPROJECTUE_API AActorSpawner : public AActor, public IInitializeable
 	UPROPERTY(EditDefaultsOnly)
 	float SpawnRadiusMax;
 	UPROPERTY(EditDefaultsOnly)
+	int ActorsToSpawnAtStart;
+	UPROPERTY(EditDefaultsOnly)
 	int MaxActorsSpawned;
 	UPROPERTY(VisibleDefaultsOnly)
-	int CurrentActorsSpawned;
+	int CurrentActorsInLevel;
 	
-	
+	FTimerHandle RespawnTimer;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -46,7 +48,11 @@ public:
 	UFUNCTION(BlueprintCallable)
     void ActorDied();
 
-protected:
+	UFUNCTION()
+	void EnableSpawner();
+
+	UFUNCTION()
+    void DisableSpawner();
 
 	virtual void Initialize_Implementation() override;
 };

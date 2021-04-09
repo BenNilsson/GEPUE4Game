@@ -4,20 +4,27 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Interaction/StartGameButton.h"
+
 #include "GameModeDeerHunting.generated.h"
-
-
 
 UCLASS()
 class GEPPROJECTUE_API AGameModeDeerHunting : public AGameModeBase
 {
 	GENERATED_BODY()
 
+	AStartGameButton* StartGameButton;
+	
+	UPROPERTY(EditDefaultsOnly)
+	int DeerAmountKilledToWin;
+	
 	UPROPERTY(EditDefaultsOnly)
 	class TSubclassOf<class AActorSpawner> ActorSpawnerToSpawn;
 
 	UPROPERTY(VisibleAnywhere)
 	class AActorSpawner* ActorSpawner;
+
+	int DeersKilled;
 
 public:
 	AGameModeDeerHunting();
@@ -41,5 +48,9 @@ private:
 	UFUNCTION()
 	void OnActorKilled();
 
+	void StartButtonClicked(bool Active);
+	void StartGame();
+	void EndGame(bool Victory);
+	
 	void CreateSpawner();
 };

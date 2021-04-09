@@ -19,12 +19,13 @@ class GEPPROJECTUE_API APlayerControllerGEP : public APlayerController, public I
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<APawn> PawnToPossess;
+
+	UPROPERTY()
+	AActor* ActorToInteractWith;
 	
 private:
 	// Called to bind functionality to input
 	virtual void SetupInputComponent() override;
-
-	virtual void BeginPlay() override;
 	
 	void MoveForward(float Value);
 	void MoveRight(float Value);
@@ -36,11 +37,17 @@ private:
 	void LookUpAtRate(float Rate);
 	
 	void WeaponFireTriggered();
+	FTimerHandle WeaponFireHeldTimer;
+	void WeaponFireHeld();
 	void WeaponFireReleased();
 
 	void Sprint();
 	void Jump();
 	void CrouchTriggered();
+
+	void CheckForInteraction();
+	FTimerHandle InteractionTimer;
+	void Interact();
 
 public:
 	

@@ -22,6 +22,7 @@ void AGEPProjectUEHUD::DrawHUD()
 	// Draw very simple crosshair
 
 	// Find center of the Canvas
+	
 	const FVector2D Center(Canvas->ClipX * 0.5f, Canvas->ClipY * 0.5f);
 
 	
@@ -34,5 +35,6 @@ void AGEPProjectUEHUD::DrawHUD()
 	FCanvasTileItem TileItem( CrosshairDrawPosition, CrosshairTex->Resource, FLinearColor::White);
 	TileItem.BlendMode = SE_BLEND_Translucent;
 	Canvas->DrawItem( TileItem );
+	
 }
 

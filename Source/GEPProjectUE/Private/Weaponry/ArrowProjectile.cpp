@@ -27,11 +27,12 @@ AArrowProjectile::AArrowProjectile()
 	// Projectile Movement
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->UpdatedComponent = CollisionComponent; // Sets what to move
-	ProjectileMovementComponent->InitialSpeed = 2500.0f;
-	ProjectileMovementComponent->MaxSpeed = 2500.0f;
+	ProjectileMovementComponent->InitialSpeed = 5000.0f;
+	ProjectileMovementComponent->MaxSpeed = 5000.0f;
 	ProjectileMovementComponent->bRotationFollowsVelocity = true; // Rotate towards velocity, essential for an arrow
 	ProjectileMovementComponent->bShouldBounce = false;
-
+	ProjectileMovementComponent->ProjectileGravityScale = 0.0f;
+	
 	// AIPerceptionStimuliSourceComponent
 	AIPerceptionStimuliSourceComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
 	
@@ -45,8 +46,16 @@ AArrowProjectile::AArrowProjectile()
 void AArrowProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	ProjectileMovementComponent->Velocity = Velocity;
+}
+
+float AArrowProjectile::GetGravity()
+{
+	return ProjectileMovementComponent->ProjectileGravityScale;
+}
+
+void AArrowProjectile::SetGravity(float Value)
+{
+	ProjectileMovementComponent->ProjectileGravityScale = Value;
 }
 
 void AArrowProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,

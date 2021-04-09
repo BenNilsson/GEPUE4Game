@@ -33,9 +33,28 @@ public:
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}
 
 	virtual AWeaponBow* GetWeaponBow_Implementation() override;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float GravityIncrement;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float GravitySpeedFactor;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float CurrentGravity;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float StartGravity;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FVector SpawnLocation;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FRotator SpawnRotation;
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	
+	
 };

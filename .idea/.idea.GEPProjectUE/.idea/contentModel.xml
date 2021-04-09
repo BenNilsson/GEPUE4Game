@@ -43548,6 +43548,9 @@
               <e p="GEPProjectUEHUD.cpp" t="Include" />
               <e p="MainMenuHUD.cpp" t="Include" />
             </e>
+            <e p="Interaction" t="Include">
+              <e p="StartGameButton.cpp" t="Include" />
+            </e>
             <e p="Interfaces" t="Include">
               <e p="Fireable.cpp" t="Include" />
               <e p="GetArrowItem.cpp" t="Include" />
@@ -43556,6 +43559,7 @@
               <e p="GetPlayerController.cpp" t="Include" />
               <e p="GetWeaponBow.cpp" t="Include" />
               <e p="Initializeable.cpp" t="Include" />
+              <e p="Interactable.cpp" t="Include" />
               <e p="Weaponable.cpp" t="Include" />
             </e>
             <e p="Inventory" t="Include">
@@ -43601,6 +43605,9 @@
               <e p="GEPProjectUEHUD.h" t="Include" />
               <e p="MainMenuHUD.h" t="Include" />
             </e>
+            <e p="Interaction" t="Include">
+              <e p="StartGameButton.h" t="Include" />
+            </e>
             <e p="Interfaces" t="Include">
               <e p="Fireable.h" t="Include" />
               <e p="GetArrowItem.h" t="Include" />
@@ -43610,6 +43617,7 @@
               <e p="GetPlayerController.h" t="Include" />
               <e p="GetWeaponBow.h" t="Include" />
               <e p="Initializeable.h" t="Include" />
+              <e p="Interactable.h" t="Include" />
               <e p="Weaponable.h" t="Include" />
             </e>
             <e p="Inventory" t="Include">

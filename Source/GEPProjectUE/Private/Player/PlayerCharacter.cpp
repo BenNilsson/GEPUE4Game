@@ -236,6 +236,16 @@ void APlayerCharacter::WeaponFireTriggered()
 	
 }
 
+void APlayerCharacter::WeaponFireHeld()
+{
+	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
+
+	AActor* WeaponChildActor = Weapon->GetChildActor();
+	
+	if (WeaponChildActor->GetClass()->ImplementsInterface(UFireable::StaticClass()))
+		IFireable::Execute_FireHeld(WeaponChildActor);
+}
+
 void APlayerCharacter::WeaponFireReleased()
 {
 	if (Weapon == nullptr || EPlayerCombatState == Passive) return;
