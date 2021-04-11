@@ -4,15 +4,19 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interfaces/GetCrate.h"
 #include "Interfaces/Initializeable.h"
 #include "Pickups/PickupItem.h"
 
 
-#include "ArrowTree.generated.h"
+#include "ArrowCrate.generated.h"
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCrateDestroyed, AArrowCrate*, DestroyedCrate);
 
 UCLASS()
-class GEPPROJECTUE_API AArrowTree : public AActor, public IInitializeable
+class GEPPROJECTUE_API AArrowCrate : public AActor, public IInitializeable, public IGetCrate
 {
+
 	GENERATED_BODY()
 
 	/* HEALTH */
@@ -33,8 +37,10 @@ class GEPPROJECTUE_API AArrowTree : public AActor, public IInitializeable
 	
 public:	
 	// Sets default values for this actor's properties
-	AArrowTree();
+	AArrowCrate();
 
+	FOnCrateDestroyed OnCrateDestroyed;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int AmountToDrop;
 
@@ -56,6 +62,6 @@ protected:
 	void DropArrows();
 
 public:	
-
+	virtual AArrowCrate* GetCrate_Implementation() override;
 
 };

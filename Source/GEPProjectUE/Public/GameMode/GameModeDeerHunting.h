@@ -20,10 +20,10 @@ class GEPPROJECTUE_API AGameModeDeerHunting : public AGameModeBase
 	int DeerAmountKilledToWin;
 	
 	UPROPERTY(EditDefaultsOnly)
-	class TSubclassOf<class AActorSpawner> ActorSpawnerToSpawn;
+	class TSubclassOf<class ADeerSpawner> ActorSpawnerToSpawn;
 
 	UPROPERTY(VisibleAnywhere)
-	class AActorSpawner* ActorSpawner;
+	class ADeerSpawner* ActorSpawner;
 
 	int DeersKilled;
 

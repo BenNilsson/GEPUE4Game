@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GameMode/ActorSpawner.h"
+#include "GameMode/DeerSpawner.h"
 
 #include "AI/AIBase.h"
 #include "Interfaces/GetBaseAI.h"
@@ -9,7 +9,7 @@
 #include "NavigationSystem.h"
 
 // Sets default values
-AActorSpawner::AActorSpawner()
+ADeerSpawner::ADeerSpawner()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
@@ -21,7 +21,7 @@ AActorSpawner::AActorSpawner()
 	CurrentActorsInLevel = 0;
 }
 
-void AActorSpawner::SpawnActorInWorld()
+void ADeerSpawner::SpawnActorInWorld()
 {
 	if (ActorToSpawn == nullptr)
 		return;
@@ -92,11 +92,11 @@ void AActorSpawner::SpawnActorInWorld()
 		if (!AIBase)
 			return;
 
-		AIBase->OnDeath.AddDynamic(this, &AActorSpawner::ActorDied);
+		AIBase->OnDeath.AddDynamic(this, &ADeerSpawner::ActorDied);
 	}
 }
 
-void AActorSpawner::ActorDied(AActor* ActorDied)
+void ADeerSpawner::ActorDied(AActor* ActorDied)
 {
 	// Spawn new enemy, broadcast death
 	CurrentActorsInLevel--;
@@ -104,7 +104,7 @@ void AActorSpawner::ActorDied(AActor* ActorDied)
 	OnActorDeath.Broadcast(ActorDied);
 }
 
-void AActorSpawner::EnableSpawner()
+void ADeerSpawner::EnableSpawner()
 {
 	for (int i = 0; i < ActorsToSpawnAtStart; i++)
 	{
@@ -114,10 +114,10 @@ void AActorSpawner::EnableSpawner()
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Enabled");
 	
-	GetWorldTimerManager().SetTimer(RespawnTimer, this, &AActorSpawner::SpawnActorInWorld, RespawnTime, true);
+	GetWorldTimerManager().SetTimer(RespawnTimer, this, &ADeerSpawner::SpawnActorInWorld, RespawnTime, true);
 }
 
-void AActorSpawner::DisableSpawner()
+void ADeerSpawner::DisableSpawner()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Disabled");
@@ -134,7 +134,7 @@ void AActorSpawner::DisableSpawner()
 	
 }
 
-void AActorSpawner::Initialize_Implementation()
+void ADeerSpawner::Initialize_Implementation()
 {
 	CurrentActorsInLevel = 0;
 	ReceiveInitialized();

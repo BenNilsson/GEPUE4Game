@@ -5,7 +5,7 @@
 #include "Interfaces/GetPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/PlayerControllerGEP.h"
-#include "GameMode/ActorSpawner.h"
+#include "GameMode/DeerSpawner.h"
 
 AGameModeDeerHunting::AGameModeDeerHunting() : Super()
 {
@@ -157,7 +157,7 @@ void AGameModeDeerHunting::CreateSpawner()
 	
 	if (Spawner->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
 	{
-		ActorSpawner = Cast<AActorSpawner>(Spawner);
+		ActorSpawner = Cast<ADeerSpawner>(Spawner);
 
 		IInitializeable::Execute_Initialize(Spawner);
 		

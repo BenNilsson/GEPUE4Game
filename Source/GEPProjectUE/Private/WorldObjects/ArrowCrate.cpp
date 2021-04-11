@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "WorldObjects/ArrowTree.h"
+#include "WorldObjects/ArrowCrate.h"
 
 
 #include "Components/BoxComponent.h"
@@ -9,7 +9,7 @@
 #include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
-AArrowTree::AArrowTree()
+AArrowCrate::AArrowCrate()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
@@ -29,31 +29,31 @@ AArrowTree::AArrowTree()
 }
 
 // Called when the game starts or when spawned
-void AArrowTree::BeginPlay()
+void AArrowCrate::BeginPlay()
 {
 	Super::BeginPlay();
 	
 	Initialize_Implementation();
 }
 
-void AArrowTree::Initialize_Implementation()
+void AArrowCrate::Initialize_Implementation()
 {
 	if (Health->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
 	{
 		IInitializeable::Execute_Initialize(Health);
-		Health->OnHealthBelowZero.AddDynamic(this, &AArrowTree::TreeDestroyed);
+		Health->OnHealthBelowZero.AddDynamic(this, &AArrowCrate::TreeDestroyed);
 	}
 }
 
-void AArrowTree::TreeDestroyed()
+void AArrowCrate::TreeDestroyed()
 {
 	DropArrows();
 	ReceiveTreeDestroyed(); // BP Event
-	
+	OnCrateDestroyed.Broadcast(this);
 	Destroy(false, false);
 }
 
-void AArrowTree::DropArrows()
+void AArrowCrate::DropArrows()
 {
 	UWorld* const World = GetWorld();
 	
@@ -72,5 +72,10 @@ void AArrowTree::DropArrows()
 		World->SpawnActor<AActor>(RandomArrowToDrop, SpawnPosition, FRotator::ZeroRotator, ActorSpawnParameters);
 	}
 	
+}
+
+AArrowCrate* AArrowCrate::GetCrate_Implementation()
+{
+	return this;
 }
 

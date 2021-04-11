@@ -43541,7 +43541,7 @@
               <e p="HealthComponent.cpp" t="Include" />
             </e>
             <e p="GameMode" t="Include">
-              <e p="ActorSpawner.cpp" t="Include" />
+              <e p="DeerSpawner.cpp" t="Include" />
               <e p="GameModeDeerHunting.cpp" t="Include" />
             </e>
             <e p="HUD" t="Include">
@@ -43554,6 +43554,7 @@
             <e p="Interfaces" t="Include">
               <e p="Fireable.cpp" t="Include" />
               <e p="GetArrowItem.cpp" t="Include" />
+              <e p="GetCrate.cpp" t="Include" />
               <e p="GetInventory.cpp" t="Include" />
               <e p="GetPlayerCharacter.cpp" t="Include" />
               <e p="GetPlayerController.cpp" t="Include" />
@@ -43585,7 +43586,8 @@
               <e p="WeaponBow.cpp" t="Include" />
             </e>
             <e p="WorldObjects" t="Include">
-              <e p="ArrowTree.cpp" t="Include" />
+              <e p="ArrowCrate.cpp" t="Include" />
+              <e p="CrateSpawner.cpp" t="Include" />
             </e>
           </e>
           <e p="Public" t="Include">
@@ -43601,7 +43603,7 @@
               <e p="HealthComponent.h" t="Include" />
             </e>
             <e p="GameMode" t="Include">
-              <e p="ActorSpawner.h" t="Include" />
+              <e p="DeerSpawner.h" t="Include" />
               <e p="GameModeDeerHunting.h" t="Include" />
             </e>
             <e p="HUD" t="Include">
@@ -43615,6 +43617,7 @@
               <e p="Fireable.h" t="Include" />
               <e p="GetArrowItem.h" t="Include" />
               <e p="GetBaseAI.h" t="Include" />
+              <e p="GetCrate.h" t="Include" />
               <e p="GetInventory.h" t="Include" />
               <e p="GetPlayerCharacter.h" t="Include" />
               <e p="GetPlayerController.h" t="Include" />
@@ -43646,7 +43649,8 @@
               <e p="WeaponBow.h" t="Include" />
             </e>
             <e p="WorldObjects" t="Include">
-              <e p="ArrowTree.h" t="Include" />
+              <e p="ArrowCrate.h" t="Include" />
+              <e p="CrateSpawner.h" t="Include" />
             </e>
           </e>
         </e>

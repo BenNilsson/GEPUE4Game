@@ -6,12 +6,12 @@
 #include "GameFramework/Actor.h"
 #include "Interfaces/Initializeable.h"
 
-#include "ActorSpawner.generated.h"
+#include "DeerSpawner.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActorDeath, AActor*, ActorDied);
 
 UCLASS()
-class GEPPROJECTUE_API AActorSpawner : public AActor, public IInitializeable
+class GEPPROJECTUE_API ADeerSpawner : public AActor, public IInitializeable
 {
 	GENERATED_BODY()
 
@@ -38,7 +38,7 @@ class GEPPROJECTUE_API AActorSpawner : public AActor, public IInitializeable
 	
 public:	
 	// Sets default values for this actor's properties
-	AActorSpawner();
+	ADeerSpawner();
 
 	FOnActorDeath OnActorDeath;
 

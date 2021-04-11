@@ -47,7 +47,7 @@ void APickupItem::OnActivate_Implementation(AActor* PickedUpBy)
 			if (Inventory->AddItem(Item))
 			{
 				// Destroy this actor
-				this->Destroy(false, false);
+				this->Destroy(false, true);
 			}
 		}
 	}
