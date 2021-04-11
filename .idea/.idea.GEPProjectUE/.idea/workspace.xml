@@ -6,36 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Player/BP_PlayerControllerGEP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_PlayerControllerGEP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/MainMenu.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +63,6 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/ArrowExplosionProjectile.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/Interactable.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/Interactable.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" />
@@ -111,6 +86,7 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/WorldObjects/ArrowTree.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/WorldObjects/ArrowTree.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oNuGU81sS98QbcJpScBJQqSrnE" />
@@ -412,7 +388,7 @@
       <workItem from="1617898458919" duration="17812000" />
       <workItem from="1617975668923" duration="15723000" />
       <workItem from="1617995834712" duration="6386000" />
-      <workItem from="1618065360363" duration="16717000" />
+      <workItem from="1618065360363" duration="17716000" />
     </task>
     <servers />
   </component>
