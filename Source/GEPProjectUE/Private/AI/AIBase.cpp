@@ -22,12 +22,18 @@ void AAIBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Health->OnHealthBelowZero.AddDynamic(this, &AAIBase::AIDied);
+	if (Health->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+	{
+		IInitializeable::Execute_Initialize(Health);
+		Health->OnHealthBelowZero.AddDynamic(this, &AAIBase::AIDied);
+	}
+	
+	
 }
 
 void AAIBase::AIDied()
 {
-	OnDeath.Broadcast();
+	OnDeath.Broadcast(this);
 }
 
 // Called to bind functionality to input

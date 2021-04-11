@@ -105,9 +105,9 @@ public:
     UInventoryComponent* GetInventory();
 	virtual UInventoryComponent* GetInventory_Implementation() override;
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void OnInitialized(); // BP
 	virtual void Initialize_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void ReceiveInitialized();
 	
 	void MoveForward(float Value);
 	void MoveRight(float Value);
@@ -128,7 +128,7 @@ public:
 	virtual void Jump() override;
 	void CrouchTriggered();
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void OptionsMenuButtonTriggered();
 
 	bool bIsMouseHeld;

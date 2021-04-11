@@ -8,7 +8,7 @@
 
 #include "ActorSpawner.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnActorDeath);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActorDeath, AActor*, ActorDied);
 
 UCLASS()
 class GEPPROJECTUE_API AActorSpawner : public AActor, public IInitializeable
@@ -32,6 +32,9 @@ class GEPPROJECTUE_API AActorSpawner : public AActor, public IInitializeable
 	int CurrentActorsInLevel;
 	
 	FTimerHandle RespawnTimer;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<AActor*> ActorsSpawned;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -46,7 +49,7 @@ public:
 	void SpawnActorInWorld();
 
 	UFUNCTION(BlueprintCallable)
-    void ActorDied();
+    void ActorDied(AActor* ActorDied);
 
 	UFUNCTION()
 	void EnableSpawner();
@@ -55,4 +58,6 @@ public:
     void DisableSpawner();
 
 	virtual void Initialize_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void ReceiveInitialized();
 };

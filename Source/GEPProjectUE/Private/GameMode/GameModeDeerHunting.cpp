@@ -30,17 +30,19 @@ void AGameModeDeerHunting::PostLogin(APlayerController* NewPlayer)
 	if (NewPlayer->GetClass()->ImplementsInterface(UGetPlayerController::StaticClass()))
 	{
 		APlayerControllerGEP* PlayerController = IGetPlayerController::Execute_GetPlayerControllerGEP(NewPlayer);
-	
-		if (PlayerController->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+		if (PlayerController)
 		{
-			// Initialize the player controller
-			IInitializeable::Execute_Initialize(PlayerController);
-
-			// Bind player events
+			if (PlayerController->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+			{
+				// Initialize the player controller
+				IInitializeable::Execute_Initialize(PlayerController);
+				
+				// Bind player events
 	
-			// Add the player to the spawner
-			if (ActorSpawner)
-				ActorSpawner->PlayersToSpawnActorsNearby.AddUnique(PlayerController);
+				// Add the player to the spawner
+				if (ActorSpawner)
+					ActorSpawner->PlayersToSpawnActorsNearby.AddUnique(PlayerController);
+			}
 		}
 	}
 	
@@ -83,13 +85,16 @@ void AGameModeDeerHunting::BeginPlay()
 		StartGameButton = Cast<AStartGameButton>(Temp);
 		if (StartGameButton)
 		{
-			StartGameButton->Initialize_Implementation();
-			StartGameButton->OnButtonPressed.AddDynamic(this, &AGameModeDeerHunting::StartButtonClicked);
+			if (StartGameButton->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+			{
+				IInitializeable::Execute_Initialize(StartGameButton);
+				StartGameButton->OnButtonPressed.AddDynamic(this, &AGameModeDeerHunting::StartButtonClicked);
+			}
 		}
 	}
 }
 
-void AGameModeDeerHunting::OnActorKilled()
+void AGameModeDeerHunting::OnActorKilled(AActor* ActorDied)
 {
 	DeersKilled++;
 	if (DeersKilled >= DeerAmountKilledToWin)
@@ -123,7 +128,14 @@ void AGameModeDeerHunting::StartGame()
 
 void AGameModeDeerHunting::EndGame(bool Victory)
 {
-	ActorSpawner->DisableSpawner();
+	// Disable the spawner
+	if (ActorSpawner)
+		ActorSpawner->DisableSpawner();
+
+	// Turn off start game button
+	// TODO - Change to function later
+	if (StartGameButton)
+		StartGameButton->bIsActive = false;
 }
 
 void AGameModeDeerHunting::CreateSpawner()
@@ -146,8 +158,8 @@ void AGameModeDeerHunting::CreateSpawner()
 	if (Spawner->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
 	{
 		ActorSpawner = Cast<AActorSpawner>(Spawner);
-		
-		ActorSpawner->Initialize_Implementation();
+
+		IInitializeable::Execute_Initialize(Spawner);
 		
 		// Add all currently existing players to the spawner
 		for (int i = 0; i < PlayerControllers.Num(); i++)

@@ -6,23 +6,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4962f0e-2032-43af-9e8e-19778354d28b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GEPProjectUE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_GameModeDeerHunting.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameMode/BP_GameModeDeerHunting.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Pickup/BP_Pickup_Item.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Player/BP_PlayerControllerGEP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_PlayerControllerGEP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/MainMenu.umap" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/Minimal_Default.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/MainMenuMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/MainMenuMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/MainMenuUIWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/MainMenuUIWidget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Bow/BP_WeaponBow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/Arrow/BP_Arrow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weaponry/ArrowExplosion/BP_ArrowExplosion.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" afterDir="false" />
     </list>
@@ -49,20 +60,9 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/ArrowExplosionProjectile.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/DeerAI.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetWeaponBow.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetWeaponBow.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetArrowItem.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetArrowItem.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/ArrowItem.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/GetPlayerCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerCPP.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerCPP.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/GetPlayerController.cpp" />
@@ -77,7 +77,6 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameStateDeerHunting.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/DeerSpawner.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/GEPProjectUE.Build.cs" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/Fireable.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Weaponry/WeaponBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBase.cpp" />
@@ -88,18 +87,30 @@
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/ArrowExplosionProjectile.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interfaces/Interactable.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/Interactable.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/AI/AIBase.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/GameModeDeerHunting.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Interaction/StartGameButton.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/GameModeDeerHunting.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/GameMode/ActorSpawner.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Inventory/InventoryComponent.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interfaces/Initializeable.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Weaponry/WeaponBow.cpp" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerControllerGEP.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Player/PlayerCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Interaction/StartGameButton.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/GameMode/ActorSpawner.h" />
       <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerControllerGEP.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Components/HealthComponent.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Components/HealthComponent.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/AIBase.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Player/PlayerCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/AI/DeerAI.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupItem.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupItem.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/Pickups/PickupBase.cpp" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/Pickups/PickupBase.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Public/WorldObjects/ArrowTree.h" />
+      <option value="$PROJECT_DIR$/Source/GEPProjectUE/Private/WorldObjects/ArrowTree.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oNuGU81sS98QbcJpScBJQqSrnE" />
@@ -400,7 +411,8 @@
       <workItem from="1617893851721" duration="2301000" />
       <workItem from="1617898458919" duration="17812000" />
       <workItem from="1617975668923" duration="15723000" />
-      <workItem from="1617995834712" duration="5176000" />
+      <workItem from="1617995834712" duration="6386000" />
+      <workItem from="1618065360363" duration="16717000" />
     </task>
     <servers />
   </component>

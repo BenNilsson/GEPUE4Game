@@ -59,6 +59,8 @@ public:
 	virtual APlayerControllerGEP* GetPlayerControllerGEP_Implementation() override;
 
 	virtual void Initialize_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void ReceiveInitialized();
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnOptionsMenuPressed();

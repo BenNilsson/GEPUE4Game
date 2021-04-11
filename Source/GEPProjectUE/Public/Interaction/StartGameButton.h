@@ -26,6 +26,8 @@ public:
 	bool bIsActive;
 	
 	virtual void Initialize_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void ReceiveInitialized();
 
 protected:
 

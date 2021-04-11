@@ -104,12 +104,15 @@ UInventoryComponent* APlayerCharacter::GetInventory_Implementation()
 	return InventoryComponent;
 }
 
-void APlayerCharacter::OnInitialized_Implementation()
-{
-}
-
 void APlayerCharacter::Initialize_Implementation()
 {
+	// Health Component
+	if (Health->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
+	{
+		IInitializeable::Execute_Initialize(Health);
+		// Death Event
+	}
+	
 	// Set Anim Instance
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if (AnimInstance)
@@ -122,7 +125,7 @@ void APlayerCharacter::Initialize_Implementation()
 
 		IsSprinting = false;
 	}
-	OnInitialized();
+	ReceiveInitialized();
 }
 
 
@@ -320,9 +323,4 @@ void APlayerCharacter::CrouchTriggered()
 	IsCrouching = !IsCrouching;
 	if (AnimInstancePlayer)
 		AnimInstancePlayer->IsCrouching = IsCrouching;
-}
-
-void APlayerCharacter::OptionsMenuButtonTriggered_Implementation()
-{
-	
 }

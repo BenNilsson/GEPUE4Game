@@ -8,7 +8,7 @@
 #include "Interfaces/GetBaseAI.h"
 #include "AIBase.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeath, AActor*, ActorDied);
 
 UCLASS()
 class GEPPROJECTUE_API AAIBase : public ACharacter, public IGetBaseAI

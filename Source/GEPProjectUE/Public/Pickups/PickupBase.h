@@ -14,6 +14,11 @@ class GEPPROJECTUE_API APickupBase : public AActor
 	GENERATED_BODY()
 
 protected:
+	
+	/* Scene Component */
+	UPROPERTY(EditAnywhere, Category="Pickup")
+	class USceneComponent* SceneComponent;
+	
 	/* Mesh */
 	UPROPERTY(EditAnywhere, Category="Pickup")
 	UStaticMeshComponent* Mesh;

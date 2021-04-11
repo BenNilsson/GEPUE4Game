@@ -32,7 +32,7 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category="Inventory")
 	FOnInventoryUpdated OnInventoryUpdated;
-
+	
 	UPROPERTY(EditAnywhere, Instanced)
 	TArray<class UItem*> DefaultItems;
 	

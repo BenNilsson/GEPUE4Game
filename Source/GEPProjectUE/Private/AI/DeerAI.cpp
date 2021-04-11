@@ -18,11 +18,10 @@ ADeerAI::ADeerAI()
 void ADeerAI::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ADeerAI::AIDied()
 {
-	OnDeath.Broadcast();
+	OnDeath.Broadcast(this);
 	Destroy(false,false);
 }

@@ -83,6 +83,7 @@ void AActorSpawner::SpawnActorInWorld()
 
 	APawn* SpawnedPawn = World->SpawnActor<APawn>(ActorToSpawn, SpawnLoc, SpawnRot, ActorSpawnParameters);
 	CurrentActorsInLevel++;
+	ActorsSpawned.Add(SpawnedPawn);
 	
 	if (SpawnedPawn->GetClass()->ImplementsInterface(UGetBaseAI::StaticClass()))
 	{
@@ -95,11 +96,12 @@ void AActorSpawner::SpawnActorInWorld()
 	}
 }
 
-void AActorSpawner::ActorDied()
+void AActorSpawner::ActorDied(AActor* ActorDied)
 {
 	// Spawn new enemy, broadcast death
 	CurrentActorsInLevel--;
-	OnActorDeath.Broadcast();
+	ActorsSpawned.Remove(ActorDied);
+	OnActorDeath.Broadcast(ActorDied);
 }
 
 void AActorSpawner::EnableSpawner()
@@ -119,11 +121,21 @@ void AActorSpawner::DisableSpawner()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Disabled");
-	
+
+	// Stop deer from spawning
 	GetWorldTimerManager().ClearTimer(RespawnTimer);
+	
+	// Kill all deer
+	for (int i = ActorsSpawned.Num() - 1; i >= 0; i--)
+	{
+		ActorsSpawned[i]->Destroy(false, true);
+	}
+	ActorsSpawned.Empty();
+	
 }
 
 void AActorSpawner::Initialize_Implementation()
 {
 	CurrentActorsInLevel = 0;
+	ReceiveInitialized();
 }

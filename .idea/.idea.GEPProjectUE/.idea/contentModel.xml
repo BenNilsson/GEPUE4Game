@@ -43584,6 +43584,9 @@
               <e p="WeaponBase.cpp" t="Include" />
               <e p="WeaponBow.cpp" t="Include" />
             </e>
+            <e p="WorldObjects" t="Include">
+              <e p="ArrowTree.cpp" t="Include" />
+            </e>
           </e>
           <e p="Public" t="Include">
             <e p="AI" t="Include">
@@ -43641,6 +43644,9 @@
               <e p="ArrowProjectile.h" t="Include" />
               <e p="WeaponBase.h" t="Include" />
               <e p="WeaponBow.h" t="Include" />
+            </e>
+            <e p="WorldObjects" t="Include">
+              <e p="ArrowTree.h" t="Include" />
             </e>
           </e>
         </e>

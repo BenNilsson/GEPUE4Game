@@ -43,7 +43,9 @@ void APlayerControllerGEP::Initialize_Implementation()
 		}
 
 		GetWorldTimerManager().SetTimer(InteractionTimer, this, &APlayerControllerGEP::CheckForInteraction, 0.1f, true);
-	
+
+		ReceiveInitialized();
+		
 		Possess(SpawnedPawn);
 	}
 }

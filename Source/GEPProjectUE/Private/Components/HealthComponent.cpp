@@ -8,12 +8,8 @@ UHealthComponent::UHealthComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 }
 
-
-// Called when the game starts
-void UHealthComponent::BeginPlay()
+void UHealthComponent::Initialize_Implementation()
 {
-	Super::BeginPlay();
-
 	// Bind Actor to this component
 	AActor* Owner = GetOwner();
 	if (Owner)
@@ -21,6 +17,14 @@ void UHealthComponent::BeginPlay()
 	
 	Health = HealthStart; // Set Health to its Start health.
 	
+	ReceiveInitialized();
+}
+
+
+// Called when the game starts
+void UHealthComponent::BeginPlay()
+{
+	Super::BeginPlay();
 }
 
 void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,

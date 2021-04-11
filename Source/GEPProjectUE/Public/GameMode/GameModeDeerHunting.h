@@ -13,6 +13,7 @@ class GEPPROJECTUE_API AGameModeDeerHunting : public AGameModeBase
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditDefaultsOnly)
 	AStartGameButton* StartGameButton;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -46,7 +47,7 @@ protected:
 private:
 	
 	UFUNCTION()
-	void OnActorKilled();
+	void OnActorKilled(AActor* ActorDied);
 
 	UFUNCTION()
 	void StartButtonClicked(bool Active);

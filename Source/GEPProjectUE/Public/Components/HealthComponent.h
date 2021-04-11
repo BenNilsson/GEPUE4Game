@@ -4,12 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Interfaces/Initializeable.h"
+
 #include "HealthComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHealthBelow0);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class GEPPROJECTUE_API UHealthComponent : public UActorComponent
+class GEPPROJECTUE_API UHealthComponent : public UActorComponent, public IInitializeable
 {
 	GENERATED_BODY()
 
@@ -18,6 +20,10 @@ public:
 	UHealthComponent();
 
 	FHealthBelow0 OnHealthBelowZero;
+
+	virtual void Initialize_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void ReceiveInitialized();
 
 protected:
 	// Called when the game starts

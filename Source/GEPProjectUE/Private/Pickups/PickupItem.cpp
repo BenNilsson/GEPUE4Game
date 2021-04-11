@@ -7,6 +7,7 @@
 #include "Inventory/Item.h"
 #include "Player/PlayerCharacter.h"
 
+
 void APickupItem::BeginPlay()
 {
 	Super::BeginPlay();
@@ -14,8 +15,11 @@ void APickupItem::BeginPlay()
 	if (!Item)
 		return;
 	
-	Mesh->SetStaticMesh(Item->ItemMesh);
-	Mesh->SetSimulatePhysics(true);
+	if (Mesh)
+	{
+		if (!Mesh->IsSimulatingPhysics())
+			Mesh->SetSimulatePhysics(true);
+	}
 }
 
 void APickupItem::OnActivate_Implementation(AActor* PickedUpBy)

@@ -13,6 +13,7 @@ AStartGameButton::AStartGameButton()
 void AStartGameButton::Initialize_Implementation()
 {
 	bIsActive = false;
+	ReceiveInitialized();
 }
 
 void AStartGameButton::BeginPlay()
