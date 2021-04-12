@@ -22,6 +22,8 @@ void ADeerAI::BeginPlay()
 
 void ADeerAI::AIDied()
 {
+	SetCanBeDamaged(false);
 	OnDeath.Broadcast(this);
-	Destroy(false,false);
+	ReceiveAIDied();
+	//Destroy(false,false);
 }

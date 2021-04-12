@@ -75,7 +75,7 @@ void AGameModeDeerHunting::BeginPlay()
 	UGameplayStatics::RemovePlayer(UGameplayStatics::GetPlayerController(World, 0), true);
 	UGameplayStatics::CreatePlayer(World);
 	*/
-	
+	 
 	CreateSpawner();
 	DeersKilled = 0;
 
@@ -109,6 +109,9 @@ void AGameModeDeerHunting::StartButtonClicked(const bool Active)
 {
 	if (!ActorSpawner)
 		return;
+
+	// Reset values
+	DeersKilled = 0;
 
 	if (Active)
 	{

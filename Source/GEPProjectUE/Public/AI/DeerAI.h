@@ -21,4 +21,6 @@ protected:
 
 	virtual void AIDied() override;
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void ReceiveAIDied();
 };
