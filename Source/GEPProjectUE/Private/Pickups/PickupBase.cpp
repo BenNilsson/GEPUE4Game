@@ -19,6 +19,8 @@ APickupBase::APickupBase()
 	// Create overlap sphere
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereCollision"));
 	SphereComponent->SetupAttachment(Mesh);
+
+	InitialLifeSpan = 20;
 }
 
 void APickupBase::NotifyActorBeginOverlap(AActor* OtherActor)

@@ -108,7 +108,7 @@ bool AWeaponBow::Fire_Implementation()
 	// Reset Gravity for the bow
 	CurrentGravity = StartGravity;
 
-	
+	Receive_Fire();
 	OnWeaponFiredEvent.Broadcast();
 	return true;
 }
@@ -127,7 +127,8 @@ bool AWeaponBow::FireReleased_Implementation()
 	ActorSpawnParameters.Owner = ParentActor;
 	
 	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLocation, SpawnRotation, ActorSpawnParameters);
-	
+
+	Receive_FireReleased();
 	OnWeaponFiredReleasedEvent.Broadcast();
 	return true;
 }

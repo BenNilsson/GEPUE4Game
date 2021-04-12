@@ -53,10 +53,10 @@ protected:
     void ReceiveInitialized();
 
 	UFUNCTION(BlueprintCallable)
-    virtual void TreeDestroyed();
+    virtual void CrateDestroyed();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void ReceiveTreeDestroyed();
+	void ReceiveCrateDestroyed();
 
 	UFUNCTION(BlueprintCallable)
 	void DropArrows();

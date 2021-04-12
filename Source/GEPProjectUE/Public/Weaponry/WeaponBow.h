@@ -26,8 +26,13 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
 	class UArrowComponent* ArrowComponent;
 	
+	
 	virtual bool Fire_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+    void Receive_Fire();
 	virtual bool FireReleased_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+	void Receive_FireReleased();
 	virtual bool FireHeld_Implementation() override;
 
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}

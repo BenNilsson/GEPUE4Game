@@ -33,10 +33,7 @@ void ACrateSpawner::SpawnCrateInWorld()
 {
 	UWorld* const World = GetWorld();
 
-	if (!CrateToSpawn)
-		return;
-
-	if (!World)
+	if (!World || !CrateToSpawn)
 		return;
 
 	const FVector Origin = GetActorLocation();
@@ -73,8 +70,6 @@ void ACrateSpawner::SpawnCrateInWorld()
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, TEXT("Navmesh Location Not Found"));
 	}
 
-	//const FVector RandomPointInAnnulus = FVector(Result.Location.X * Range, Result.Location.Y * Range, Result.Location.Z);
-	
 	// Location Found
 	SpawnLocation = Result.Location;
 	

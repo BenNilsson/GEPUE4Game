@@ -41,14 +41,15 @@ void AArrowCrate::Initialize_Implementation()
 	if (Health->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
 	{
 		IInitializeable::Execute_Initialize(Health);
-		Health->OnHealthBelowZero.AddDynamic(this, &AArrowCrate::TreeDestroyed);
+		ReceiveInitialized();
+		Health->OnHealthBelowZero.AddDynamic(this, &AArrowCrate::CrateDestroyed);
 	}
 }
 
-void AArrowCrate::TreeDestroyed()
+void AArrowCrate::CrateDestroyed()
 {
 	DropArrows();
-	ReceiveTreeDestroyed(); // BP Event
+	ReceiveCrateDestroyed(); // BP Event
 	OnCrateDestroyed.Broadcast(this);
 	Destroy(false, false);
 }

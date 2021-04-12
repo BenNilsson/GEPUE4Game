@@ -24,7 +24,7 @@ void AStartGameButton::BeginPlay()
 bool AStartGameButton::Interact_Implementation()
 {
 	bIsActive = !bIsActive;
-	
+	ReceiveInteracted();
 	OnButtonPressed.Broadcast(bIsActive);
 
 	/*

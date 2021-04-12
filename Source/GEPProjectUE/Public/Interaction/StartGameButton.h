@@ -37,5 +37,7 @@ protected:
 
 public:	
 	virtual bool Interact_Implementation() override;
+	UFUNCTION(BlueprintImplementableEvent)
+	void ReceiveInteracted();
 	
 };

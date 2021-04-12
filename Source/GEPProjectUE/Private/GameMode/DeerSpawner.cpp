@@ -121,7 +121,7 @@ void ADeerSpawner::DisableSpawner()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "[Spawner] Disabled");
-
+	
 	// Stop deer from spawning
 	GetWorldTimerManager().ClearTimer(RespawnTimer);
 	
@@ -130,7 +130,10 @@ void ADeerSpawner::DisableSpawner()
 	{
 		ActorsSpawned[i]->Destroy(false, true);
 	}
+	
+	// Reset values
 	ActorsSpawned.Empty();
+	CurrentActorsInLevel = 0;
 	
 }
 
