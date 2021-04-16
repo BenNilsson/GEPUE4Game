@@ -48,15 +48,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	virtual void Initialize_Implementation() override;
-	UFUNCTION(BlueprintImplementableEvent)
-    void ReceiveInitialized();
+	virtual void Initialize_Implementation() override;;
 
-	UFUNCTION(BlueprintCallable)
-    virtual void CrateDestroyed();
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void ReceiveCrateDestroyed();
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void CrateDestroyed();
 
 	UFUNCTION(BlueprintCallable)
 	void DropArrows();

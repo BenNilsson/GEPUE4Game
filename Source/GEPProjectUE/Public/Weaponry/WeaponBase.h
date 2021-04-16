@@ -44,16 +44,9 @@ protected:
 	TEnumAsByte<EWeapon_Combat_Type> EWeaponType;
 	
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
-	bool Fire();
-	virtual bool Fire_Implementation() override;
-	
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
-	bool FireReleased();
-	virtual bool FireReleased_Implementation() override;
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Fireable")
-    bool FireHeld();
+	virtual bool Fire_Implementation() override;
+	virtual bool FireReleased_Implementation() override;
 	virtual bool FireHeld_Implementation() override;
 
 	UPROPERTY(BlueprintAssignable, Category="Weapon Events")

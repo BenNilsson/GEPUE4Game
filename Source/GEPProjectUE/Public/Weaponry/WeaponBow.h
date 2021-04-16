@@ -8,13 +8,19 @@
 #include "ArrowProjectile.h"
 #include "WeaponBase.h"
 #include "Interfaces/GetWeaponBow.h"
-
+#include "Kismet/GameplayStaticsTypes.h"
 #include "WeaponBow.generated.h"
 
 UCLASS(BlueprintType, Blueprintable)
 class GEPPROJECTUE_API AWeaponBow : public AWeaponBase, public IGetWeaponBow
 {
 	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere)
+	float DrawTimeRequired;
+
+	UPROPERTY(VisibleAnywhere)
+	float CurrentDrawTime;
 	
 public:
 	// Sets default values for this actor's properties
@@ -26,13 +32,8 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
 	class UArrowComponent* ArrowComponent;
 	
-	
 	virtual bool Fire_Implementation() override;
-	UFUNCTION(BlueprintImplementableEvent)
-    void Receive_Fire();
 	virtual bool FireReleased_Implementation() override;
-	UFUNCTION(BlueprintImplementableEvent)
-	void Receive_FireReleased();
 	virtual bool FireHeld_Implementation() override;
 
 	FORCEINLINE class UArrowComponent* GetArrowComponent() const { return ArrowComponent;}
@@ -55,11 +56,12 @@ public:
 	FVector SpawnLocation;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FRotator SpawnRotation;
+
+	UPROPERTY(BlueprintReadOnly)
+	FPredictProjectilePathResult PredictResult;
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	
-	
 };

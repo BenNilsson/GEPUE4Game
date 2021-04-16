@@ -20,6 +20,7 @@ AWeaponBow::AWeaponBow()
 	GravityIncrement = 0.0035f;
 	GravitySpeedFactor = 6.0f;
 	StartGravity = 0.2f;
+	DrawTimeRequired = 0.15f;
 	CurrentGravity = StartGravity;
 }
 
@@ -53,10 +54,14 @@ bool AWeaponBow::FireHeld_Implementation()
 	float Increment = 1 / Length;
 	Increment *= GravitySpeedFactor;
 	GravityIncrement = Increment;
+	
 	// Set current gravity
 	CurrentGravity = CurrentGravity - GravityIncrement;
 	CurrentGravity = FMath::Clamp(CurrentGravity, 0.0f, StartGravity);
 
+	// Increase draw time
+	CurrentDrawTime += Increment;
+	
 	// Predicted Path Arguments
 	// Parameters
 	FVector Offset = FVector(0.0f, 0.0f, CurrentGravity);
@@ -75,9 +80,6 @@ bool AWeaponBow::FireHeld_Implementation()
 	Params.OverrideGravityZ = CurrentGravity;
 	Params.TraceChannel = ECC_Visibility;
 
-	// Result
-	FPredictProjectilePathResult PredictResult;
-
 	// Predicted Path
 	bool HasHit = UGameplayStatics::PredictProjectilePath(World, Params, PredictResult);
 	FVector EndLocation;
@@ -86,18 +88,6 @@ bool AWeaponBow::FireHeld_Implementation()
 	SpawnLocation = ArrowComponent->GetComponentLocation();
 	SpawnRotation = UKismetMathLibrary::FindLookAtRotation(SpawnLocation, EndLocation);
 
-	// DEBUG DELETE AFTER
-	const FName TraceTag("TraceTag");
-	World->DebugDrawTraceTag = TraceTag;
-	FCollisionQueryParams CollisionsParams;
-	CollisionsParams.TraceTag = TraceTag;
-
-	// Line trace from camera outwards
-	if (World->LineTraceSingleByChannel(Hit, SpawnLocation, EndLocation, ECC_Visibility, CollisionsParams))
-	{
-	}
-	
-	
 	OnWeaponFireHeldEvent.Broadcast();
 	return true;
 }
@@ -107,8 +97,9 @@ bool AWeaponBow::Fire_Implementation()
 {
 	// Reset Gravity for the bow
 	CurrentGravity = StartGravity;
+	// Reset draw time
+	CurrentDrawTime = 0;
 
-	Receive_Fire();
 	OnWeaponFiredEvent.Broadcast();
 	return true;
 }
@@ -120,6 +111,11 @@ bool AWeaponBow::FireReleased_Implementation()
 
 	if (!World && ArrowProjectile == nullptr)
 		return false;
+
+	// Stop if bow isn't 'drawn'
+	if (DrawTimeRequired > CurrentDrawTime)
+		return false;
+		
 	
 	FActorSpawnParameters ActorSpawnParameters;
 	ActorSpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
@@ -128,7 +124,6 @@ bool AWeaponBow::FireReleased_Implementation()
 	
 	World->SpawnActor<AArrowProjectile>(ArrowProjectile, SpawnLocation, SpawnRotation, ActorSpawnParameters);
 
-	Receive_FireReleased();
 	OnWeaponFiredReleasedEvent.Broadcast();
 	return true;
 }

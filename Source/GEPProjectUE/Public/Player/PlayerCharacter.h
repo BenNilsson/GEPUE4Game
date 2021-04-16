@@ -106,8 +106,6 @@ public:
 	virtual UInventoryComponent* GetInventory_Implementation() override;
 
 	virtual void Initialize_Implementation() override;
-	UFUNCTION(BlueprintImplementableEvent)
-    void ReceiveInitialized();
 	
 	void MoveForward(float Value);
 	void MoveRight(float Value);

@@ -33,7 +33,7 @@ void AArrowCrate::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	Initialize_Implementation();
+	Execute_Initialize(this);
 }
 
 void AArrowCrate::Initialize_Implementation()
@@ -41,15 +41,13 @@ void AArrowCrate::Initialize_Implementation()
 	if (Health->GetClass()->ImplementsInterface(UInitializeable::StaticClass()))
 	{
 		IInitializeable::Execute_Initialize(Health);
-		ReceiveInitialized();
 		Health->OnHealthBelowZero.AddDynamic(this, &AArrowCrate::CrateDestroyed);
 	}
 }
 
-void AArrowCrate::CrateDestroyed()
+void AArrowCrate::CrateDestroyed_Implementation()
 {
 	DropArrows();
-	ReceiveCrateDestroyed(); // BP Event
 	OnCrateDestroyed.Broadcast(this);
 	Destroy(false, false);
 }

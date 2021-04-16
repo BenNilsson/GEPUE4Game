@@ -125,7 +125,6 @@ void APlayerCharacter::Initialize_Implementation()
 
 		IsSprinting = false;
 	}
-	ReceiveInitialized();
 }
 
 
@@ -265,12 +264,13 @@ void APlayerCharacter::WeaponFireReleased()
 
 	AActor* WeaponChildActor = Weapon->GetChildActor();
 
-	switch (EPlayerCombatState)
+	if (WeaponChildActor->GetClass()->ImplementsInterface(UFireable::StaticClass()))
 	{
-	    case Ranged:
-	    	if (WeaponAnimMontage)
-	    		StopAnimMontage(WeaponAnimMontage);
-
+		if (IFireable::Execute_FireReleased(WeaponChildActor))
+		{
+			switch (EPlayerCombatState)
+			{
+			case Ranged:
 				if (!ArrowItem)
 					ArrowItem = InventoryComponent->GetArrow();
 				else if (!InventoryComponent->ContainsItem(ArrowItem))
@@ -280,15 +280,25 @@ void APlayerCharacter::WeaponFireReleased()
 					return;
 
 				InventoryComponent->RemoveItem(ArrowItem);
+				break;
+			default:
+				break;
+			}
+		}
+
+		// Stop animations and change state
+		switch (EPlayerCombatState)
+		{
+		case Ranged:
+			if (WeaponAnimMontage)
+				StopAnimMontage(WeaponAnimMontage);
 			break;
 		default:
 			break;
+		}
+
+		SetState(Passive);
 	}
-
-	SetState(Passive);
-
-	if (WeaponChildActor->GetClass()->ImplementsInterface(UFireable::StaticClass()))
-		IFireable::Execute_FireReleased(WeaponChildActor);
 }
 
 void APlayerCharacter::Sprint()
